@@ -41,7 +41,6 @@ public class InventoryUI : MonoBehaviour
         foreach (Transform child in transform) 
         { 
             InventoryItemUI uiItemComponent = child.GetComponent<InventoryItemUI>(); 
-            uiItemComponent.selectShader.SetActive(false); 
             uiItemComponent.thisItemSelected = false;
         }
         EmptySlot();

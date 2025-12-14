@@ -9,7 +9,6 @@ public class InventoryItemUI : MonoBehaviour, IPointerClickHandler
     //=============== ITEM DATA ===============\\
 
     public string itemName;
-    public int quantity;
     public Sprite itemSprite;
     public bool isFull;
     public string itemDescription;
@@ -24,7 +23,6 @@ public class InventoryItemUI : MonoBehaviour, IPointerClickHandler
     public Image itemDescriptionImage;
     public TMP_Text itemDescriptionNameText;
     public TMP_Text itemDescriptionText;
-    public GameObject selectShader;
     public bool thisItemSelected;
     public InventoryItemData Data;
     private InventoryItemData current;
@@ -39,7 +37,6 @@ public class InventoryItemUI : MonoBehaviour, IPointerClickHandler
         itemName = itemPair.itemName;
         itemSprite = itemPair.itemSprite;
         itemDescription = itemPair.itemDescription;
-        this.quantity = quantity;
         itemImage.sprite = itemSprite;
         itemImage.gameObject.SetActive(true);
         quantityText.text = quantity.ToString();
@@ -70,7 +67,6 @@ public class InventoryItemUI : MonoBehaviour, IPointerClickHandler
         else
         {
             Inventory.Instance.inventoryUI.DeselectAllSlots();
-            selectShader.SetActive(true);
             thisItemSelected = true;
             itemDescriptionNameText.text = itemName;
             itemDescriptionText.text = itemDescription;
@@ -87,22 +83,6 @@ public class InventoryItemUI : MonoBehaviour, IPointerClickHandler
         if (thisItemSelected)
         {
 
-            Data.Use();
-            if (quantity > 0)
-            {
-                Data.Use();
-                quantityText.text = this.quantity.ToString();
-                if (quantity <= 0)
-                {
-                    Inventory.Instance.inventoryUI.DeselectAllSlots();
-                    Inventory.Instance.inventoryUI.EmptySlot();
-                    Inventory.Instance.inventoryUI.Sync();
-                }
-
-            }
-
-          
-           
         }
     }
 
