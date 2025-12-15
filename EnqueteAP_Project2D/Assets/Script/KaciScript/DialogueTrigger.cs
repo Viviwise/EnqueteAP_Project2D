@@ -1,5 +1,6 @@
 using Script.KaciScript;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour 
 {
@@ -9,7 +10,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (isInDialogue && !isFirstClick && Input.GetMouseButtonDown(0))
+        if (isInDialogue && !isFirstClick && Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (DialogueManager.instance != null)
             {
