@@ -85,7 +85,7 @@ namespace Script.KaciScript
                 yield return new WaitForSeconds(0.05f);
             }
         }
-        private void EndDialogue()
+        public void EndDialogue()
         {
             Debug.Log("EndDialogue appelé");
             
