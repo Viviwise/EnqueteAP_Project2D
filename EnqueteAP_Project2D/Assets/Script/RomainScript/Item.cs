@@ -1,15 +1,40 @@
+using Unity.VisualScripting;
 using UnityEngine;
+
 
 public class Item : MonoBehaviour
 {
     [SerializeField] private InventoryItemData itemData;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private CursorManager Instance;
+    private bool onMouseDown;
+    
+    private void Update()
     {
-        if (collision.CompareTag("Player"))
+        
+    }
+
+    private void OnMouseDown()
+    {
+       
+       Debug.Log("OnMouseDown");
+        Book();
+        
+            
+    }
+
+    private void Book()
+    {
+        
+        Collider2D col = GetComponent<Collider2D>();
+          
+
+        if (col == true && CompareTag("Book"))
         {
             Inventory.Instance.AddItem(itemData, 1);
             Destroy(gameObject);
+            Debug.Log("Destroyed");
+                    
         }
+
     }
 }

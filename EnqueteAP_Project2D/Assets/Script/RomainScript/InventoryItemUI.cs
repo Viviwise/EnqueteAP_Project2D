@@ -13,7 +13,6 @@ public class InventoryItemUI : MonoBehaviour, IPointerClickHandler
     public bool isFull;
     public string itemDescription;
     public Sprite emptySprite;
-    [SerializeField] private int maxNumberOfItems;
 
     //=============== ITEM SLOT ===============\\
     [SerializeField] private TMP_Text quantityText;
@@ -62,8 +61,7 @@ public class InventoryItemUI : MonoBehaviour, IPointerClickHandler
         {
             current.Use();
         }
-
-
+        
         else
         {
             Inventory.Instance.inventoryUI.DeselectAllSlots();

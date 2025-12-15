@@ -13,8 +13,6 @@ public class InventoryItemData : ScriptableObject
     
     public Sprite itemSprite;
 
-
-
     public void Use()
     {
         switch
