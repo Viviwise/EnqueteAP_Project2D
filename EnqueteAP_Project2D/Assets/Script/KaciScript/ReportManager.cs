@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Script.KaciScript
 {
@@ -8,7 +9,7 @@ namespace Script.KaciScript
     {
         public static ReportManager instance;
         public GameObject reportPanel;
-        public List<TextMeshProUGUI> reportText = new List<TextMeshProUGUI>();
+        public List<Text> reportText = new List<Text>();
         private  bool isActive; 
         
         private List<InjuryData>  injuryExaminees = new List<InjuryData>();
