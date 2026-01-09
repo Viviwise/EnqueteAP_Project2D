@@ -24,15 +24,14 @@ public class DialogueTrigger : MonoBehaviour
 
     private void CheckClickOnInjury()
     {
-        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
+        Vector2 mousePos = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        
+        if (hit.collider != null && CompareTag("Injury"))
         {
-            if (hit.collider.gameObject == gameObject && CompareTag("Injury"))
-            {
-                HandleDialogueClick();
-            }
+            Debug.Log("Clic détecté sur sprite: " + gameObject.name);
+            HandleDialogueClick();
         }
     }
 

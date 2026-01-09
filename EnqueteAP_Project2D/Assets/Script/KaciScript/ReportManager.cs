@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,14 +10,40 @@ namespace Script.KaciScript
     {
         public static ReportManager instance;
         public GameObject reportPanel;
-        public List<Text> reportText = new List<Text>();
-        private  bool isActive; 
-        
-        private List<InjuryData>  injuryExaminees = new List<InjuryData>();
+        public List<Button> reportButton = new List<Button>();
+        private bool isActive; 
+
+        private List<InjuryData> injuryExaminees = new List<InjuryData>();
 
         private void Awake()
         {
-            instance = this; 
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private void Start()
+        {
+            InitializeButtons();
+            UpdateReportDisplay(); 
+        }
+
+        private void InitializeButtons()
+        {
+            foreach (Button button in reportButton)
+            {
+                TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+                if (buttonText != null)
+                {
+                    Debug.Log("Bouton initialisé: " + button.name);
+                    buttonText.text = ""; // Commence vide
+                }
+            }
         }
 
         public void AddInjuryData(InjuryData injuryData)
@@ -25,45 +52,81 @@ namespace Script.KaciScript
             {
                 injuryExaminees.Add(injuryData); 
                 UpdateReportDisplay();
+                Debug.Log($"Blessure ajoutée: {injuryData.injuryName}");
             }
-            
-        }
-            public void UpdateReportDisplay()
+            else
             {
-                for (int i = 0; i < injuryExaminees.Count; i++)
-                {
-                    if (i < reportText.Count && reportText[i] != null)
-                    {
-                        reportText[i].text = injuryExaminees[i].injuryName;
-                    }
-                }
+                Debug.LogWarning("Cette blessure existe déjà dans le rapport");
+            }
+        }
 
-                for (int i = injuryExaminees.Count; i < reportText.Count; i++)
+        public void RemoveInjuryData(InjuryData injuryData)
+        {
+            if (injuryExaminees.Contains(injuryData))
+            {
+                injuryExaminees.Remove(injuryData);
+                UpdateReportDisplay();
+                Debug.Log($"Blessure retirée: {injuryData.injuryName}");
+            }
+        }
+
+        public void UpdateReportDisplay()
+        {
+            for (int i = 0; i < injuryExaminees.Count; i++)
+            {
+                if (i < reportButton.Count && reportButton[i] != null)
                 {
-                    if (reportText[i] != null)
+                    TextMeshProUGUI buttonText = reportButton[i].GetComponentInChildren<TextMeshProUGUI>();
+                    if (buttonText != null)
                     {
-                        reportText[i].text = "";
+                        buttonText.text = injuryExaminees[i].injuryName;
                     }
                 }
             }
 
-         void SwitchPanel()
+            for (int i = injuryExaminees.Count; i < reportButton.Count; i++)
+            {
+                if (reportButton[i] != null)
+                {
+                    TextMeshProUGUI buttonText = reportButton[i].GetComponentInChildren<TextMeshProUGUI>();
+                    if (buttonText != null)
+                    {
+                        buttonText.text = "";
+                    }
+                }
+            }
+        }
+
+        public void ToggleReportPanel()
         {
             if (reportPanel == null)
-                return; 
+            {
+                Debug.LogError("reportPanel n'est pas assigné !");
+                return;
+            }
+            
             isActive = !isActive;
-            if (isActive == true)
+            reportPanel.SetActive(isActive);
+            
+            Debug.Log($"Panel rapport: {(isActive ? "Ouvert" : "Fermé")}");
+        }
+
+        public void OpenReportPanel()
+        {
+            if (reportPanel != null)
             {
                 reportPanel.SetActive(true);
-            }
-            else 
-            {
-                reportPanel.SetActive(false);
+                isActive = true;
             }
         }
-        
 
-       
-        
+        public void CloseReportPanel()
+        {
+            if (reportPanel != null)
+            {
+                reportPanel.SetActive(false);
+                isActive = false;
+            }
+        }
     }
-} 
+}
