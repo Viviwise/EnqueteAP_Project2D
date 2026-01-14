@@ -1,42 +1,20 @@
+
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Inspection : MonoBehaviour
+public class Inspection : Interactable
 {
-    public string infoName;
-    public string zone;
+    [SerializeField] string nomBlessure;
+    [SerializeField] string lieuBlessure;
 
-    private bool isHovering = false;
-
-    void Update()
+    public override void OnHoverEnter()
     {
-       HoverCol();
+        base.OnHoverEnter();
+        Debug.Log("Il y a " + nomBlessure +" sur " + lieuBlessure);
     }
 
-    public void HoverCol()
+    public override void OnClick()
     {
-        Vector2 screenPos = Mouse.current.position.ReadValue();
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(screenPos);
-
-        Collider2D col = GetComponent<Collider2D>();
-
-        bool nowHovering = col != null && col.OverlapPoint(mousePos);
-
-        if (nowHovering && !isHovering)
-        {
-            isHovering = true;
-            CursorManager.Instance.OnHoverEnter();
-            Debug.Log(infoName + " se trouve sur " + zone);
-        }
-        else if (!nowHovering && isHovering)
-        {
-            isHovering = false;
-            CursorManager.Instance.OnHoverExit();
-        }
-
-        if (isHovering && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Debug.Log(infoName + " se trouve sur " + zone + " >:(  frr arrete d'appuyer ça fait mal");
-        }
+        Debug.Log("Noté");
     }
+
 }

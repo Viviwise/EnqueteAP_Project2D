@@ -7,11 +7,12 @@ public class CursorManager : MonoBehaviour
     public Texture2D defaultCursor;
     public Texture2D hoverCursor;
 
-    private int hoverCount = 0; 
+    private int hoverCount = 0;
 
     void Awake()
     {
         if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     void Start()
