@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -8,47 +9,42 @@ namespace Script.KaciScript
 {
     public class Report : MonoBehaviour
     {
-        // ❌ SUPPRIMÉ : public static Report Instance;
 
-        [Header("Identification")]
-        public string reportName = "Rapport 1";  // ✅ NOUVEAU : Nom du rapport
 
-        [Header("UI Configuration")]
+        public string reportName = "Rapport 1"; 
+
         public Transform container;
         public GameObject prefabLine;
         public Button buttonValidate;
         public TextMeshProUGUI result;
         public GameObject panelReport;
         
-        [Header("Solution correcte")]
         public List<InjuryID> correctInjuryIds;
         
-        [Header("État actuel")]
-        private List<LineReport> lineReports = new List<LineReport>();
+        public  List<LineReport> lineReports = new List<LineReport>();
         private bool isReportVisible = false;
-
-        private void Awake()
-        {
-            Debug.Log($"✅ {reportName} créé");
-        }
-
+        
+        public static Report instance;
+        
         private void Start()
         {
             if (buttonValidate != null)
             {
                 buttonValidate.onClick.AddListener(() => ValidateReport());
             }
-
-            Debug.Log($" {reportName} - Solution attendue :");
-            foreach (InjuryID id in correctInjuryIds)
-            {
-                Debug.Log($"  - {id}");
-            }
         }
 
+        private void Awake()
+        {
+            if (instance != null)
+            {
+                return;
+            }
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
         public bool ValidateReport()
         {
-            Debug.Log($"=== VALIDATION DE {reportName} ===");
             
             int correctAnswers = 0;
             int wrongAnswers = 0;
@@ -60,8 +56,6 @@ namespace Script.KaciScript
                 bool playerMarkedCorrect = lineReport.IsMarkedCorrect();
                 bool isActuallyCorrect = correctInjuryIds.Contains(injuryId);
 
-                Debug.Log($" {lineReport.GetInjury().injuryname}");
-                Debug.Log($" Joueur: {(playerMarkedCorrect ? "✓" : "✗")} | Réalité: {(isActuallyCorrect ? "✓" : "✗")}");
 
                 if (playerMarkedCorrect && isActuallyCorrect)
                 {
@@ -85,25 +79,7 @@ namespace Script.KaciScript
             }
             
             bool isValid = (correctAnswers == correctInjuryIds.Count) && (wrongAnswers == 0);
-
-            if (result != null)
-            {
-                if (isValid)
-                {
-                    result.text = $" Parfait !\n{correctAnswers}/{correctInjuryIds.Count}";
-                    result.color = Color.green;
-                }
-                else
-                {
-                    result.text = $"Erreurs :\n";
-                    result.text += $"Bonnes: {correctAnswers}/{correctInjuryIds.Count}\n";
-                    result.text += $"Fausses: {wrongAnswers}\n";
-                    result.text += $"Manquées: {missedInjuries}";
-                    result.color = Color.red;
-                }
-            }
-
-            Debug.Log($"{reportName} → Valide: {isValid}");
+            
             return isValid; 
         }
 
@@ -113,7 +89,6 @@ namespace Script.KaciScript
             {
                 if (lineReport.GetInjury().injuryid == injury.injuryid)
                 {
-                    Debug.Log($"{injury.injuryname} déjà dans {reportName}");
                     return;
                 }
             }
@@ -125,7 +100,7 @@ namespace Script.KaciScript
             {
                 newLineReport.Initialize(injury);
                 lineReports.Add(newLineReport);
-                Debug.Log($"✅ {injury.injuryname} → {reportName}");
+                
             }
         }
 
@@ -142,13 +117,7 @@ namespace Script.KaciScript
                 Destroy(line.gameObject);
             }
             lineReports.Clear();
-            
-            if (result != null)
-            {
-                result.text = "";
-            }
-            
-            Debug.Log($"{reportName} réinitialisé");
+          
         }
     }
 }

@@ -11,10 +11,14 @@ namespace Script.KaciScript
         public TextMeshProUGUI nameText;
         public GameObject dialoguePanel;
 
+        public float autoCloseDelay = 1f;
+
         private Queue<string> sentences;
         public static DialogueManager instance;
         private bool isActive;
-        private DialogueTrigger currentTrigger; 
+        private DialogueTrigger currentTrigger;
+        private bool isTyping = false;
+        private string currentSentence;
 
         private void Awake()
         {
@@ -24,6 +28,7 @@ namespace Script.KaciScript
             }
             else
             {
+                Destroy(gameObject);
                 return;
             }
 
@@ -34,17 +39,18 @@ namespace Script.KaciScript
                 dialoguePanel.SetActive(false);
             }
         }
-       
+
         public void StartDialogue(Dialogue dialogue, DialogueTrigger trigger = null)
         {
-            currentTrigger = trigger; 
+            currentTrigger = trigger;
 
             if (dialoguePanel != null)
             {
-                dialoguePanel.SetActive(true);  
+                dialoguePanel.SetActive(true);
             }
             else
             {
+                Debug.LogWarning("DialoguePanel est null !");
                 return;
             }
 
@@ -62,12 +68,23 @@ namespace Script.KaciScript
                 sentences.Enqueue(sentence);
                 Debug.Log("Phrase ajoutée : " + sentence);
             }
+            
+            DisplayNextSentence();
         }
+
         public void DisplayNextSentence()
         {
+            if (isTyping)
+            {
+                StopAllCoroutines();
+                dialogueText.text = currentSentence;
+                isTyping = false;
+                return;
+            }
+
             if (sentences.Count == 0)
             {
-                EndDialogue();
+                StartCoroutine(CloseDialogueAfterDelay(autoCloseDelay));
                 return;
             }
 
@@ -78,38 +95,40 @@ namespace Script.KaciScript
 
         IEnumerator TypeSentence(string sentence)
         {
+            currentSentence = sentence;
+            isTyping = true;
             dialogueText.text = "";
+            
             foreach (char letter in sentence.ToCharArray())
             {
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(0.05f);
             }
+            
+            isTyping = false;
         }
+
+        IEnumerator CloseDialogueAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            EndDialogue();
+        }
+
         public void EndDialogue()
         {
-            Debug.Log("EndDialogue appelé");
-            
+
             if (dialoguePanel != null)
                 dialoguePanel.SetActive(false);
 
             isActive = false;
+            isTyping = false;
             
-            if (currentTrigger != null)
-            {
-                currentTrigger.OnDialogueEnd();
-                currentTrigger = null; 
-            }
-            
+            StopAllCoroutines();
         }
 
         public bool IsDialogueActive()
         {
             return isActive;
-        }
-
-        public void SkipTyping()
-        {
-            StopAllCoroutines();
         }
     }
 }
