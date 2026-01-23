@@ -130,5 +130,10 @@ namespace Script.KaciScript
         {
             return isActive;
         }
+
+        public void OpenDialoguePanel()
+        {
+            dialoguePanel.SetActive(true);
+        }
     }
 }

@@ -1,38 +1,40 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Script.KaciScript
+public class LineReport : MonoBehaviour
 {
-    public class LineReport : MonoBehaviour
+    private Inspection injury;
+    public TextMeshProUGUI displayText;
+
+    void Awake()
     {
-        public TextMeshProUGUI textName;
-        public Toggle checkboxCorrect; 
-        public Injury myinjury;
-
-        public void Initialize(Injury injury)
-        {
-            myinjury = injury;
-            textName.text = myinjury.injuryname;
-            checkboxCorrect.isOn = false;
-
-        }
-
-        public bool IsMarkedCorrect()
-        {
-            return checkboxCorrect.isOn;
-        }
+        displayText = GetComponentInChildren<TextMeshProUGUI>();
         
-        public Injury GetInjury()
+        if (displayText == null)
         {
-            return myinjury;
+            Debug.LogError("Aucun TextMeshProUGUI trouvé dans LineReport !");
+        }
+    }
+
+    public void Initialize(Inspection inspection)
+    {
+        if (inspection == null)
+        {
+            Debug.LogError("Inspection null !");
+            return;
         }
 
-        public bool HasInjuryID(InjuryID id)
-        {
-            return myinjury != null && myinjury.injuryid == id;
-        }
-
+        this.injury = inspection;
         
+        if (displayText != null)
+        {
+            displayText.text = inspection.nomBlessure;
+            Debug.Log($"Blessure ajoutée : {inspection.nomBlessure}");
+        }
+    }
+
+    public Inspection GetInjury()
+    {
+        return injury;
     }
 }

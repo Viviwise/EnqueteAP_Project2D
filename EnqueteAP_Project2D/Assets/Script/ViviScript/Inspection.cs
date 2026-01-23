@@ -1,10 +1,14 @@
+using Script.KaciScript;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Inspection : Interactable
+public class Inspection : Interactable , IPointerClickHandler 
 {
-    [SerializeField] string nomBlessure;
+    [SerializeField] public string nomBlessure;
     [SerializeField] string lieuBlessure;
     private bool blessureHover = false;
+    public Report targetReport;
     
     [SerializeField] GameObject colliderComparaison;
 
@@ -28,4 +32,20 @@ public class Inspection : Interactable
         }
     }
     
+    
+  public void OnPointerClick(PointerEventData eventData)
+{
+    Report report = targetReport != null ? targetReport : Report.Instance;
+    
+    if (report != null)
+    {
+        report.AddInjury(this);
+        DialogueManager.instance.OpenDialoguePanel();
+    }
+    else
+    {
+        Debug.LogError("Aucun Report disponible !");
+    }
+}
+
 }
