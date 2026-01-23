@@ -1,40 +1,46 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField] private InventoryItemData itemData;
-    private CursorManager Instance;
-    private bool onMouseDown;
-    
+    private ItemPickable itemPickable;
+
+    [SerializeField] private Camera cam;
+    [SerializeField] private InventoryManager inventoryManager;
+
     private void Update()
     {
-        
-    }
-
-    private void OnMouseDown()
-    {
-       
-       Debug.Log("OnMouseDown");
-        Book();
-        
-            
-    }
-
-    private void Book()
-    {
-        
-        Collider2D col = GetComponent<Collider2D>();
-          
-
-        if (col == true && CompareTag("Book"))
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Inventory.Instance.AddItem(itemData, 1);
-            Destroy(gameObject);
-            Debug.Log("Destroyed");
-                    
-        }
+            Vector2 mouseWorldPos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
+            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                ItemPickable item = hit.collider.GetComponent<ItemPickable>();
+
+                if (item != null)
+                {
+                    inventoryManager.ItemPicked(hit.collider.gameObject);
+                }
+            }
+        }
     }
+
+    /*public void OnBeginDrag(PointerEventData eventData)
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        //throw new System.NotImplementedException();
+    }*/
 }

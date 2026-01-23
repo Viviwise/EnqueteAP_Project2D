@@ -12,19 +12,21 @@ public class Inspection : Interactable , IPointerClickHandler
     
 
   
-    public override void OnHoverEnter()
+  /*  public override void OnHoverEnter()
     {
         base.OnHoverEnter();
         Debug.Log("Il y a " + nomBlessure +" sur " + lieuBlessure);
         blessureHover = true;
     }
-
-    
-    
+    */
+  
     
   public void OnPointerClick(PointerEventData eventData)
 {
     Report report = targetReport != null ? targetReport : Report.Instance;
+    
+    Debug.Log("Il y a " + nomBlessure +" sur " + lieuBlessure);
+    blessureHover = true;
     
     if (report != null)
     {
