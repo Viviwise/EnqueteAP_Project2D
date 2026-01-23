@@ -11,14 +11,9 @@ namespace Script.KaciScript
         public TextMeshProUGUI nameText;
         public GameObject dialoguePanel;
 
-        public float autoCloseDelay = 1f;
-
         private Queue<string> sentences;
         public static DialogueManager instance;
         private bool isActive;
-        private DialogueTrigger currentTrigger;
-        private bool isTyping = false;
-        private string currentSentence;
 
         private void Awake()
         {
@@ -33,29 +28,22 @@ namespace Script.KaciScript
             }
 
             sentences = new Queue<string>();
-
+            
             if (dialoguePanel != null)
             {
                 dialoguePanel.SetActive(false);
             }
         }
 
-        public void StartDialogue(Dialogue dialogue, DialogueTrigger trigger = null)
+        public void StartDialogue(Dialogue dialogue)
         {
-            currentTrigger = trigger;
-
             if (dialoguePanel != null)
             {
                 dialoguePanel.SetActive(true);
             }
-            else
-            {
-                Debug.LogWarning("DialoguePanel est null !");
-                return;
-            }
-
+            
             isActive = true;
-
+            
             if (nameText != null)
             {
                 nameText.text = dialogue.name;
@@ -66,7 +54,6 @@ namespace Script.KaciScript
             foreach (string sentence in dialogue.sentences)
             {
                 sentences.Enqueue(sentence);
-                Debug.Log("Phrase ajoutée : " + sentence);
             }
             
             DisplayNextSentence();
@@ -74,66 +61,39 @@ namespace Script.KaciScript
 
         public void DisplayNextSentence()
         {
-            if (isTyping)
-            {
-                StopAllCoroutines();
-                dialogueText.text = currentSentence;
-                isTyping = false;
-                return;
-            }
-
+            
             if (sentences.Count == 0)
             {
-                StartCoroutine(CloseDialogueAfterDelay(autoCloseDelay));
+                EndDialogue();
                 return;
             }
 
             string sentence = sentences.Dequeue();
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(sentence));
-        }
-
-        IEnumerator TypeSentence(string sentence)
-        {
-            currentSentence = sentence;
-            isTyping = true;
-            dialogueText.text = "";
             
-            foreach (char letter in sentence.ToCharArray())
+            if (dialogueText != null)
             {
-                dialogueText.text += letter;
-                yield return new WaitForSeconds(0.05f);
+                dialogueText.text = sentence;
             }
             
-            isTyping = false;
         }
-
-        IEnumerator CloseDialogueAfterDelay(float delay)
+        void EndDialogue()
         {
-            yield return new WaitForSeconds(delay);
-            EndDialogue();
-        }
-
-        public void EndDialogue()
-        {
-
-            if (dialoguePanel != null)
-                dialoguePanel.SetActive(false);
-
-            isActive = false;
-            isTyping = false;
             
-            StopAllCoroutines();
+            isActive = false;
+            
+            if (dialoguePanel != null)
+            {
+                dialoguePanel.SetActive(false);
+            }
+            else
+            {
+                Debug.LogError(" dialoguePanel est NULL !");
+            }
         }
 
         public bool IsDialogueActive()
         {
             return isActive;
-        }
-
-        public void OpenDialoguePanel()
-        {
-            dialoguePanel.SetActive(true);
         }
     }
 }

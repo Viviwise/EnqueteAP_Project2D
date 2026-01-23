@@ -10,7 +10,7 @@ public class DialogueTrigger : MonoBehaviour, IPointerClickHandler
     {
         if (DialogueManager.instance != null && !DialogueManager.instance.IsDialogueActive())
         {
-            DialogueManager.instance.StartDialogue(dialogue, this);
+            DialogueManager.instance.StartDialogue(dialogue);
         }
     }
 }

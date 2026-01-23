@@ -40,7 +40,6 @@ public class Inspection : Interactable , IPointerClickHandler
     if (report != null)
     {
         report.AddInjury(this);
-        DialogueManager.instance.OpenDialoguePanel();
     }
     else
     {
