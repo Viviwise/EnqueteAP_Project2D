@@ -125,5 +125,101 @@ namespace Script.KaciScript
 
             Debug.Log($"{reportName} fermé");
         }
+        
+ 
+public void SaveReportPlayerPref()
+{
+    Debug.Log("=== DÉBUT SAUVEGARDE ===");
+    
+    if (lineReports == null || lineReports.Count == 0)
+    {
+        Debug.LogWarning("⚠La liste lineReports est vide !");
+        return;
     }
+    
+    Debug.Log($"Nombre de lignes à sauvegarder : {lineReports.Count}");
+    
+    List<string> nomsBlessures = new List<string>();
+    
+    for (int i = 0; i < lineReports.Count; i++)
+    {
+        LineReport lineReport = lineReports[i];
+        
+        if (lineReport == null)
+        {
+            Debug.LogWarning($" Ligne {i} est null");
+            continue;
+        }
+        
+        Inspection injury = lineReport.GetInjury();
+        
+        if (injury == null)
+        {
+            Debug.LogWarning($" Ligne {i} n'a pas d'inspection");
+            continue;
+        }
+        
+        if (string.IsNullOrEmpty(injury.nomBlessure))
+        {
+            Debug.LogWarning($" Ligne {i} a une blessure sans nom");
+            continue;
+        }
+        
+        nomsBlessures.Add(injury.nomBlessure);
+        Debug.Log($"  [{i}] Ajouté : {injury.nomBlessure}");
+    }
+    
+    if (nomsBlessures.Count == 0)
+    {
+        Debug.LogWarning(" Aucune blessure valide à sauvegarder !");
+        return;
+    }
+    
+    string dataString = string.Join("|", nomsBlessures);
+    
+    PlayerPrefs.SetString("ReportData", dataString);
+    PlayerPrefs.SetInt("InjuryCount", nomsBlessures.Count);
+    PlayerPrefs.SetString("ReportName", reportName);
+    PlayerPrefs.Save();
+    
+    Debug.Log($" SAUVEGARDE RÉUSSIE !");
+    Debug.Log($"   Rapport : {reportName}");
+    Debug.Log($"   Blessures : {nomsBlessures.Count}");
+    Debug.Log($"   Données : {dataString}");
+}
+
+           
+        public void LoadReportPlayerPref()
+        {
+            if (!PlayerPrefs.HasKey("ReportData"))
+            {
+                Debug.LogWarning(" Aucune donnée sauvegardée trouvée !");
+                return;
+            }
+    
+            string dataString = PlayerPrefs.GetString("ReportData", "");
+            int count = PlayerPrefs.GetInt("InjuryCount", 0);
+            string savedReportName = PlayerPrefs.GetString("ReportName", "Rapport inconnu");
+    
+            Debug.Log($"   Rapport : {savedReportName}");
+            Debug.Log($"   Nombre : {count}");
+            Debug.Log($"   Données brutes : {dataString}");
+    
+            if (string.IsNullOrEmpty(dataString))
+            {
+                Debug.LogWarning("⚠Les données sont vides !");
+                return;
+            }
+    
+            string[] nomsBlessures = dataString.Split('|');
+    
+            Debug.Log($"CHARGEMENT RÉUSSI : {nomsBlessures.Length} blessures");
+    
+            foreach (string nom in nomsBlessures)
+            {
+                Debug.Log($"  • {nom}");
+            }
+        }
+    }
+ 
 }

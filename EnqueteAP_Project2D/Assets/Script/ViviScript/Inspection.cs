@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Script.KaciScript;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -35,5 +36,6 @@ public class Inspection : Interactable , IPointerClickHandler
         Debug.LogError("Aucun Report disponible !");
     }
 }
-
+  
+  
 }
