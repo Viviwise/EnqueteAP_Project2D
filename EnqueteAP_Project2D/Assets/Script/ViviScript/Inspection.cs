@@ -10,27 +10,16 @@ public class Inspection : Interactable , IPointerClickHandler
     private bool blessureHover = false;
     public Report targetReport;
     
-    [SerializeField] GameObject colliderComparaison;
 
-    void Start()
-    {
-        colliderComparaison.SetActive(false);
-    }
+  
     public override void OnHoverEnter()
     {
         base.OnHoverEnter();
         Debug.Log("Il y a " + nomBlessure +" sur " + lieuBlessure);
         blessureHover = true;
-        ShowColCOmparaison();
     }
 
-    public void ShowColCOmparaison()
-    {
-        if (blessureHover)
-        {
-            colliderComparaison.SetActive(true);
-        }
-    }
+    
     
     
   public void OnPointerClick(PointerEventData eventData)
