@@ -20,7 +20,7 @@ namespace Script.RomainScript.Books
             pickable = GetComponent<ItemPickable>();
             cam = Camera.main;
             uiManager = GameObject.FindFirstObjectByType<BookUIManager>();
-            Debug.Log("Found");
+            
         }
 
         /*public void OnPointerClick(PointerEventData eventData)

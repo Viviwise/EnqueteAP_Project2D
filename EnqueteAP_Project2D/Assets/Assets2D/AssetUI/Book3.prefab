@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 728626146973768429, guid: 49c472d01a3bd604e9658bfd407cc46d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,17 +127,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.02018404, y: -0.025229454}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.05, y: 2.72}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.9670515, y: 2.6046295}
   m_EdgeRadius: 0
 --- !u!114 &6116717371005269369
 MonoBehaviour:
@@ -164,5 +164,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcbc4b5f7964ec193758f02d77da3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.RomainScript.Books.BookItem
-  <BookType>k__BackingField: 2
-  cam: {fileID: 0}
