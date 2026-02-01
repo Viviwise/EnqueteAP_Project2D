@@ -1,5 +1,6 @@
 using System;
 using JetBrains.Annotations;
+using Script.RomainScript.Books;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Book", menuName = "BookItem")]
@@ -8,24 +9,10 @@ public class InventoryItemData : ScriptableObject
 
     public string itemName;
     public string itemDescription;
+    public GameObject itemPrefab;
 
     public ItemType itemType;
-    
+    public BookType bookType;
+
     public Sprite itemSprite;
-
-    public void Use()
-    {
-        switch
-            (itemType)
-        {
-            case ItemType.Book:
-                UseBook();
-                break;
-        }
-    }
-
-    public void UseBook()
-    {
-        Inventory.Instance.BookSlot.SetItem(this, Inventory.Instance.GetQuantity(this));
-    }
 }
