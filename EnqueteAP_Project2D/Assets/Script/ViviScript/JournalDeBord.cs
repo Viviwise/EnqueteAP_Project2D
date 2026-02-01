@@ -1,9 +1,16 @@
+using System.Collections.Generic;
+using Script.EliasScript;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JournalDeBord : MonoBehaviour
+public class JournalDeBord : MonoBehaviour, ISavedStringElement
 {
+    //SAVEKEY pas changer !!!!!!
+    private const string SaveKey = "JournalText"; // clé de sauvegarde
+    public Dictionary<string, string> SavedStrings { get; private set; } // dictionnaire
+    
+    
     [SerializeField] private Button journalButton;     
     [SerializeField] private GameObject journalPanel;  
     [SerializeField] private TMP_InputField noteInputField;  // <-- champ éditable
@@ -12,7 +19,6 @@ public class JournalDeBord : MonoBehaviour
 
     private bool journalOpen = false;
 
-    private const string SaveKey = "JournalText"; // clé de sauvegarde
 
     void Awake()
     {
@@ -27,6 +33,8 @@ public class JournalDeBord : MonoBehaviour
             return;
         }
 
+        SavedStrings = new Dictionary<string, string>();
+        
         // bouton
         journalButton.onClick.AddListener(ToggleJournal);
 
@@ -38,6 +46,8 @@ public class JournalDeBord : MonoBehaviour
 
         // sauvegarde à chaque changement de texte
         noteInputField.onValueChanged.AddListener(OnTextChanged);
+        
+        
     }
 
     public void ToggleJournal()
@@ -53,15 +63,24 @@ public class JournalDeBord : MonoBehaviour
 
     private void OnTextChanged(string newValue)
     {
+        /*
         PlayerPrefs.SetString(SaveKey, newValue);
         PlayerPrefs.Save();
+        */
+
+        SavedStrings[SaveKey] = newValue;
+        this.Saved();
     }
 
     private void LoadJournal()
     {
+    /*
         if (PlayerPrefs.HasKey(SaveKey))
             noteInputField.text = PlayerPrefs.GetString(SaveKey);
         else
             noteInputField.text = "";
-    }
+    */
+        noteInputField.text = SavedManager.LoadString(SaveKey);
+    } 
+
 }
