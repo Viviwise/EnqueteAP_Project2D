@@ -8,145 +8,155 @@ using UnityEngine;
 
 namespace Script.KaciScript
 {
-public class Report : MonoBehaviour, IMonoSaveListenerComponent
-{
-    //SAVE
-    public const string ContentReport = "ContenuDuRapport";
     
-    
-    public string reportName = "Rapport 1"; 
-    
-    public Transform container;
-    public GameObject prefabLine;
-    public GameObject panelReport;
-
-    public List<LineReport> lineReports = new List<LineReport>();
-    private bool isReportVisible = false;
-    public static Report Instance { get; private set; }
-
-    //SAVE = écriture des données
-    public void Write(List<ISavedProperty> properties)
+    [Serializable]
+    public class LineReportsSavedProperties : SavedProperty<List<LineReport>>
     {
-        properties.Add(new SavedStringProperty(ContentReport, lineReports));
-    }
-
-    //SAVE = lecture des données
-    public void Read(Dictionary<string, ISavedProperty> properties)
-    {
-        properties.TrySetValue(ContentReport, out );
+        public LineReportsSavedProperties(string key, List<LineReport> value) : base(key, value)
+        {
+        }
     }
     
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this );
-        }
-        else
-        {
-            Debug.LogWarning("Il y a déjà une instance de Report !");
-        }
-    }
-
     
-    public void AddInjury(Inspection inspection)
+    
+    public class Report : MonoBehaviour, IMonoSaveListenerComponent
     {
-        if (inspection == null)
+        //SAVE
+        public const string ContentReport = "ContenuDuRapport";
+
+
+        public string reportName = "Rapport 1";
+
+        public Transform container;
+        public GameObject prefabLine;
+        public GameObject panelReport;
+
+        public List<LineReport> lineReports = new List<LineReport>();
+        private bool isReportVisible = false;
+        public static Report Instance { get; private set; }
+
+        //SAVE = écriture des données
+        public void Write(List<ISavedProperty> properties)
         {
-            Debug.LogError("Inspection est null !");
-            return;
+            properties.Add(new LineReportsSavedProperties(ContentReport, lineReports));
         }
 
-        if (string.IsNullOrEmpty(inspection.nomBlessure))
+        //SAVE = lecture des données
+        public void Read(Dictionary<string, ISavedProperty> properties)
         {
-            Debug.LogWarning("L'inspection n'a pas de nom de blessure !");
-            return;
+            properties.TrySetValue(ContentReport, out lineReports);
         }
 
-        if (container == null)
+        void Awake()
         {
-            Debug.LogError("Container n'est pas assigné dans l'Inspector !");
-            return;
-        }
-
-        if (prefabLine == null)
-        {
-            Debug.LogError("PrefabLine n'est pas assigné dans l'Inspector !");
-            return;
-        }
-
-        string nomBlessure = inspection.nomBlessure;
-
-        foreach (LineReport lineReport in lineReports)
-        {
-            if (lineReport != null && lineReport.GetInjury() != null)
+            if (Instance == null)
             {
-                if (lineReport.GetInjury().nomBlessure == nomBlessure)
-                {
-                    Debug.Log($"La blessure '{nomBlessure}' existe déjà dans le rapport.");
-                    return;
-                }
+                Instance = this;
+                DontDestroyOnLoad(this);
+            }
+            else
+            {
+                Debug.LogWarning("Il y a déjà une instance de Report !");
             }
         }
 
-        GameObject newLine = Instantiate(prefabLine, container);
-        LineReport newLineReport = newLine.GetComponent<LineReport>();
 
-        if (newLineReport != null)
+        public void AddInjury(Inspection inspection)
         {
-            newLineReport.Initialize(inspection);
-            lineReports.Add(newLineReport);
-            Debug.Log($"Blessure '{nomBlessure}' ajoutée au rapport.");
+            if (inspection == null)
+            {
+                Debug.LogError("Inspection est null !");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(inspection.nomBlessure))
+            {
+                Debug.LogWarning("L'inspection n'a pas de nom de blessure !");
+                return;
+            }
+
+            if (container == null)
+            {
+                Debug.LogError("Container n'est pas assigné dans l'Inspector !");
+                return;
+            }
+
+            if (prefabLine == null)
+            {
+                Debug.LogError("PrefabLine n'est pas assigné dans l'Inspector !");
+                return;
+            }
+
+            string nomBlessure = inspection.nomBlessure;
+
+            foreach (LineReport lineReport in lineReports)
+            {
+                if (lineReport != null && lineReport.GetInjury() != null)
+                {
+                    if (lineReport.GetInjury().nomBlessure == nomBlessure)
+                    {
+                        Debug.Log($"La blessure '{nomBlessure}' existe déjà dans le rapport.");
+                        return;
+                    }
+                }
+            }
+
+            GameObject newLine = Instantiate(prefabLine, container);
+            LineReport newLineReport = newLine.GetComponent<LineReport>();
+
+            if (newLineReport != null)
+            {
+                newLineReport.Initialize(inspection);
+                lineReports.Add(newLineReport);
+                Debug.Log($"Blessure '{nomBlessure}' ajoutée au rapport.");
+            }
+            else
+            {
+                Debug.LogError("Le prefabLine n'a pas de composant LineReport !");
+                Destroy(newLine);
+            }
         }
-        else
+
+        public void OpenReport()
         {
-            Debug.LogError("Le prefabLine n'a pas de composant LineReport !");
-            Destroy(newLine);
+            if (Instance != null && Instance != this)
+            {
+                Instance.CloseReport();
+            }
+
+            isReportVisible = true;
+
+            if (panelReport != null)
+            {
+                panelReport.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("PanelReport n'est pas assigné !");
+            }
+
+            Instance = this;
+            Debug.Log($"{reportName} ouvert");
+        }
+
+
+        public void CloseReport()
+        {
+            isReportVisible = false;
+
+            if (panelReport != null)
+            {
+                panelReport.SetActive(false);
+            }
+
+            if (Instance == this)
+            {
+                Instance = null;
+            }
+
+            Debug.Log($"{reportName} fermé");
         }
     }
-
-    public void OpenReport()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Instance.CloseReport();
-        }
-
-        isReportVisible = true;
-        
-        if (panelReport != null)
-        {
-            panelReport.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("PanelReport n'est pas assigné !");
-        }
-
-        Instance = this;
-        Debug.Log($"{reportName} ouvert");
-    }
-
-    
-    public void CloseReport()
-    {
-        isReportVisible = false;
-        
-        if (panelReport != null)
-        {
-            panelReport.SetActive(false);
-        }
-
-        if (Instance == this)
-        {
-            Instance = null;
-        }
-
-        Debug.Log($"{reportName} fermé");
-    }
-
-    
 }
 
 
@@ -243,5 +253,4 @@ public class Report : MonoBehaviour, IMonoSaveListenerComponent
         {
             Debug.Log($"  • {nom}");
         }
-    }/*
-}
+    }*/
