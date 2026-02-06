@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using Script.EliasScript;
+using Script.EliasScript.SceneListeners;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JournalDeBord : MonoBehaviour, ISavedStringElement
+// ici besoin d'un script listener comme class
+public class JournalDeBord : MonoSaveListener
 {
-    //SAVEKEY pas changer !!!!!!
-    private const string SaveKey = "JournalText"; // clé de sauvegarde
-    public Dictionary<string, string> SavedStrings { get; private set; } // dictionnaire
-    
+    //SaveJournalState pas changer !!!!!!
+    private const string SaveJournalState = "JournalText"; // clé de sauvegarde + valeur
     
     [SerializeField] private Button journalButton;     
     [SerializeField] private GameObject journalPanel;  
@@ -19,7 +19,8 @@ public class JournalDeBord : MonoBehaviour, ISavedStringElement
 
     private bool journalOpen = false;
 
-
+    
+    //action dans le lancement du jeu 
     void Awake()
     {
         if (Instance == null)
@@ -32,24 +33,16 @@ public class JournalDeBord : MonoBehaviour, ISavedStringElement
             Destroy(gameObject);
             return;
         }
-
-        SavedStrings = new Dictionary<string, string>();
         
         // bouton
         journalButton.onClick.AddListener(ToggleJournal);
 
-        // charger texte sauvegardé
-        LoadJournal();
-
         journalPanel.SetActive(false);
         noteInputField.gameObject.SetActive(false);
-
-        // sauvegarde à chaque changement de texte
-        noteInputField.onValueChanged.AddListener(OnTextChanged);
-        
         
     }
 
+    //ouverture du journal
     public void ToggleJournal()
     {
         journalOpen = !journalOpen;
@@ -60,27 +53,16 @@ public class JournalDeBord : MonoBehaviour, ISavedStringElement
         if (journalOpen)
             noteInputField.ActivateInputField();
     }
-
-    private void OnTextChanged(string newValue)
+    
+    //SAVE = écriture des données
+    protected override void Write(List<ISavedProperty> properties)
     {
-        /*
-        PlayerPrefs.SetString(SaveKey, newValue);
-        PlayerPrefs.Save();
-        */
-
-        SavedStrings[SaveKey] = newValue;
-        this.Saved();
+        properties.Add(new SavedStringProperty(SaveJournalState, noteInputField.text));
     }
-
-    private void LoadJournal()
+    // SAVE = lecture des données
+    protected override void Read(Dictionary<string, ISavedProperty> properties)
     {
-    /*
-        if (PlayerPrefs.HasKey(SaveKey))
-            noteInputField.text = PlayerPrefs.GetString(SaveKey);
-        else
-            noteInputField.text = "";
-    */
-        noteInputField.text = SavedManager.LoadString(SaveKey);
-    } 
-
+        if(properties.TrySetValue(SaveJournalState, out string text))
+            noteInputField.text = text;
+    }
 }

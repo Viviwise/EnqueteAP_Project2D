@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using Script.EliasScript;
+using Script.EliasScript.SceneListeners;
 using Script.KaciScript;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Inspection : Interactable , IPointerClickHandler, ISavedIntElement
+public class Inspection : Interactable, IPointerClickHandler, IMonoSaveListenerComponent
 {
-    private const string SaveKey = "InjuryHover"; // clé de sauvegarde
-    public Dictionary<string, int> SavedInts { get; private set; }
+    //SaveKey pas changer !!!!!!
+    private const string SaveKey = "InspectionSaving"; // clé de sauvegarde
     
     
     [SerializeField] public string nomBlessure;
@@ -16,43 +17,42 @@ public class Inspection : Interactable , IPointerClickHandler, ISavedIntElement
     private bool blessureHover = false;
     public Report targetReport;
     
-    
-  /*  public override void OnHoverEnter()
+
+    public void OnPointerClick(PointerEventData eventData)
     {
-        base.OnHoverEnter();
-        Debug.Log("Il y a " + nomBlessure +" sur " + lieuBlessure);
+        Report report = targetReport != null ? targetReport : Report.Instance;
+
+        Debug.Log("Il y a " + nomBlessure + " sur " + lieuBlessure);
         blessureHover = true;
+
+        if (report != null)
+        {
+            report.AddInjury(this);
+        }
+        else
+        {
+            Debug.LogError("Aucun Report disponible !");
+        } 
     }
-    */
-  
-  
-  private void Awake()
-  {
-      SavedInts = new Dictionary<string, int>();
-      blessureHover = SavedManager.LoadInt(SaveKey) == 1;
-      
-  }
-    
-  public void OnPointerClick(PointerEventData eventData)
-{
-    Report report = targetReport != null ? targetReport : Report.Instance;
-    
-    Debug.Log("Il y a " + nomBlessure +" sur " + lieuBlessure);
-    blessureHover = true;
-    
-    if (report != null)
-    {
-        report.AddInjury(this);
-    }
-    else
-    {
-        Debug.LogError("Aucun Report disponible !");
-    }
-    
-    int boolToInt = blessureHover ? 1 : -1;
-    SavedInts[SaveKey] = boolToInt;
-    this.Saved();
-}
 
 
+    //SAVE = écriture des données
+    void IMonoSaveListenerComponent.Write(List<ISavedProperty> properties)
+    {
+        properties.Add(new SavedBoolProperty(SaveKey, blessureHover));
+        
+        properties.Add(new SavedStringProperty(SaveKey, nomBlessure));
+    }
+
+    // SAVE = lecture des données
+    void IMonoSaveListenerComponent.Read(Dictionary<string, ISavedProperty> properties)
+    {
+        /*
+        if (properties.TryGetValue(SaveKey, out ISavedProperty property))
+            property.TrySetValue(out blessureHover, false);
+        */
+        properties.TrySetValue(SaveKey, out blessureHover);
+        
+        properties.TrySetValue(SaveKey, out nomBlessure);
+    }
 }

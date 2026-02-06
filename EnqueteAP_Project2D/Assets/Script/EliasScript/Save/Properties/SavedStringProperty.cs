@@ -7,7 +7,6 @@ namespace Script.EliasScript
     {
         public SavedStringProperty(string key, string value) : base(key, value)
         {
-            
         }
     }
 }

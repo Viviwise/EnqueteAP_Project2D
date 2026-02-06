@@ -5,14 +5,29 @@ namespace Script.EliasScript.SceneListeners
 {
     public class EmptyMonoSaveListener : MonoSaveListener
     {
-        protected override void Write(List<ISavedProperty> properties)
+        private IMonoSaveListenerComponent[] components;
+
+        private void Awake()
         {
-            throw new NotImplementedException();
+            components = GetComponents<IMonoSaveListenerComponent>();
         }
 
-        protected override void Read(IReadOnlyList<ISavedProperty> properties)
+        protected override void Write(List<ISavedProperty> properties)
         {
-            throw new NotImplementedException();
+            for (var i = 0; i < components.Length; i++)
+            {
+                IMonoSaveListenerComponent component = components[i];
+                component.Write(properties);
+            }
+        }
+
+        protected override void Read(Dictionary<string, ISavedProperty> properties)
+        {
+            for (var i = 0; i < components.Length; i++)
+            {
+                IMonoSaveListenerComponent component = components[i];
+                component.Read(properties);
+            }
         }
     }
 }
