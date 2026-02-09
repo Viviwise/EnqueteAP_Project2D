@@ -33,18 +33,20 @@ public class ChangeSalle : MonoBehaviour
         examinationPosition = new Vector3(20f, 0f, -10f);
         bureauPosition = new Vector3(40f, 0f, -10f);
         tableBureauPosition = new Vector3(60f, 0f, -10f);
+        
+        cam.transform.position = bureauPosition;
 
-        salleExamUI.SetActive(true);
+        salleExamUI.SetActive(false);
         examinationC1UI.SetActive(false);
         examinationC2UI.SetActive(false);
         examinationC3UI.SetActive(false);
 
-        goToSalleExamButton.gameObject.SetActive(false);
-        goToExamC1Button.gameObject.SetActive(true);
-        goToExamC2Button.gameObject.SetActive(true);
-        goToExamC3Button.gameObject.SetActive(true);
-        goToBureauButton.gameObject.SetActive(true);
-        goToTableBureauButton.gameObject.SetActive(false);
+        goToSalleExamButton.gameObject.SetActive(true);
+        goToExamC1Button.gameObject.SetActive(false);
+        goToExamC2Button.gameObject.SetActive(false);
+        goToExamC3Button.gameObject.SetActive(false);
+        goToBureauButton.gameObject.SetActive(false);
+        goToTableBureauButton.gameObject.SetActive(true);
 
 
         goToExamC1Button.onClick.AddListener(GoToExaminationC1);
@@ -102,8 +104,7 @@ public class ChangeSalle : MonoBehaviour
         examinationC1UI.SetActive(false);
         examinationC2UI.SetActive(false);
         examinationC3UI.SetActive(false);
-
-
+        
         salleExamUI.SetActive(true);
         cam.transform.position = salleExamPosition;
 
@@ -113,8 +114,6 @@ public class ChangeSalle : MonoBehaviour
         goToExamC3Button.gameObject.SetActive(true);
         goToBureauButton.gameObject.SetActive(true);
         goToTableBureauButton.gameObject.SetActive(false);
-
-
     }
 
     public void GoToBureau()
@@ -144,7 +143,7 @@ public class ChangeSalle : MonoBehaviour
         examinationC3UI.SetActive(false);
         salleExamUI.SetActive(false);
         
-        goToSalleExamButton.gameObject.SetActive(true);
+        goToSalleExamButton.gameObject.SetActive(false);
         goToExamC1Button.gameObject.SetActive(false);
         goToExamC2Button.gameObject.SetActive(false);
         goToExamC3Button.gameObject.SetActive(false);
