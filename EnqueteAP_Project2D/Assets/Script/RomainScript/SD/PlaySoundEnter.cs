@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class PlaySoundEnter : StateMachineBehaviour
+public class PlaySoundEnter : MonoBehaviour
 {
 
     [SerializeField] private SoundType sound;
     [SerializeField, Range(0f, 1)] private float volume = 1;
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public void OnUsed(int layerIndex)
     {
         SoundManager.PlaySound(sound, volume);
     }

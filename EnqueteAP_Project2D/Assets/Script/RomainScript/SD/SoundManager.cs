@@ -3,12 +3,12 @@ using System;
 public enum SoundType
 {
     Music,
-    SFX,
     Ambient,
+    OpeningBook,
+    ClosingBook,
+    Door,
     Footsteps,
-    Hurt,
-    DamageInflicted,
-    Weapon,
+    Writing,
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
