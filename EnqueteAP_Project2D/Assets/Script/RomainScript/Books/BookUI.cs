@@ -7,6 +7,8 @@ namespace Script.RomainScript.Books
     {
         [field: SerializeField] public BookType BookType { get; private set; }
         [SerializeField] private CanvasGroup canvasGroup;
+        [SerializeField] private PlaySoundEnter soundUsed;
+        [SerializeField] private PlaySoundExit soundExit;
 
         [SerializeField] public GameObject image01;
         [SerializeField] public GameObject image02;
@@ -20,6 +22,7 @@ namespace Script.RomainScript.Books
             
             canvasGroup.blocksRaycasts = true;
             canvasGroup.interactable = true;
+            soundUsed.OnUsed(0);
         }
 
         public void Close()
