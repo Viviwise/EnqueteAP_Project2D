@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 95257b84c9ec24d4abf9796575330ab3
+guid: 8116f12fccd32f4408226370e1d62328
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7887850538892458588
-    second: SalleExam_0
+      213: 5035848226698749535
+    second: Report_Group_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SalleExam_0
+      name: Report_Group_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1711
-        height: 955
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4a501fbf9b9b88290800000000000000
-      internalID: -7887850538892458588
+      spriteID: f56e827f74de2e540800000000000000
+      internalID: 5035848226698749535
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SalleExam_0: -7887850538892458588
+      Report_Group_0: 5035848226698749535
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

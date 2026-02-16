@@ -17,8 +17,6 @@ namespace Script.KaciScript
         }
     }
     
-    
-    
     public class Report : MonoBehaviour, IMonoSaveListenerComponent
     {
         //SAVE
@@ -32,23 +30,27 @@ namespace Script.KaciScript
         public GameObject panelReport;
 
         public List<LineReport> lineReports = new List<LineReport>();
-        private bool isReportVisible = false;
+        public bool isReportVisible;
         public static Report Instance { get; private set; }
 
+        
+        
         //SAVE = écriture des données
         public void Write(List<ISavedProperty> properties)
         {
             properties.Add(new LineReportsSavedProperties(ContentReport, lineReports));
         }
-
         //SAVE = lecture des données
         public void Read(Dictionary<string, ISavedProperty> properties)
         {
             properties.TrySetValue(ContentReport, out lineReports);
         }
+        
 
-        void Awake()
+        public void Awake()
         {
+            CloseReport();
+            
             if (Instance == null)
             {
                 Instance = this;
@@ -59,7 +61,7 @@ namespace Script.KaciScript
                 Debug.LogWarning("Il y a déjà une instance de Report !");
             }
         }
-
+        
 
         public void AddInjury(Inspection inspection)
         {
