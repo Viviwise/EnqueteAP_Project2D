@@ -22,18 +22,9 @@ public class CursorManager : MonoBehaviour
         }
     }
     
-    public static CursorManager instance;
+    private static CursorManager instance;
     
     
-    /*
-    void Awake()
-    {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
-    }
-    */
-    
-
     void Start()
     {
         Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);

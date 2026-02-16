@@ -26,7 +26,6 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             GameObject clickedObject = eventData.pointerCurrentRaycast.gameObject;

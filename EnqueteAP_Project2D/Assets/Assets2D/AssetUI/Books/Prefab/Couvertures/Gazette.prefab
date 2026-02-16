@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1536390744899897897}
   - component: {fileID: 4274323560625842369}
   m_Layer: 0
-  m_Name: Book4
+  m_Name: Gazette
   m_TagString: Book
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

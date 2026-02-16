@@ -8,14 +8,14 @@ namespace Script.RomainScript.Books
         [field: SerializeField] public BookType BookType { get; private set; }
         [SerializeField] private CanvasGroup canvasGroup;
 
-        [SerializeField] public GameObject image001;
+        [SerializeField] public GameObject image01;
         [SerializeField] public GameObject image02;
         
         
         public void Open()
         {
             canvasGroup.alpha = 1;
-            image001.SetActive(true);
+            image01.SetActive(true);
             image02.SetActive(false);
             
             canvasGroup.blocksRaycasts = true;
@@ -31,13 +31,13 @@ namespace Script.RomainScript.Books
 
         public void NextPage()
         {
-            image001.SetActive(false);
+            image01.SetActive(false);
             image02.SetActive(true);
         }
 
         public void PreviousPage()
         {
-            image001.SetActive(true);
+            image01.SetActive(true);
             image02.SetActive(false);
         }
     }

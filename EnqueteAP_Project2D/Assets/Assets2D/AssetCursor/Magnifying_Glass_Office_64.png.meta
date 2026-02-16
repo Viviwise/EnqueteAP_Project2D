@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0cfb9b54ec2e9ce4eada6ef8e83ff509
+guid: 39cddce3bc60f2146947c61940836e11
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2038969533842635111
-    second: BBE_002_0
+      213: -6157591683004500522
+    second: Magnifying_Glass_Office_64_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BBE_002_0
+      name: Magnifying_Glass_Office_64_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 8
-        width: 4913
-        height: 3493
+        x: 0
+        y: 1
+        width: 63
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 996477b030024b3e0800000000000000
-      internalID: -2038969533842635111
+      spriteID: 6d5fd961df6db8aa0800000000000000
+      internalID: -6157591683004500522
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BBE_002_0: -2038969533842635111
+      Magnifying_Glass_Office_64_0: -6157591683004500522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

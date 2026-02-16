@@ -5,12 +5,12 @@ public class Interactable : MonoBehaviour, IInteractable
 {
     public virtual void OnHoverEnter()
     {
-        CursorManager.instance.OnHoverEnter();
+        CursorManager.Instance.OnHoverEnter();
     }
 
     public virtual void OnHoverExit()
     {
-        CursorManager.instance.OnHoverExit();
+        CursorManager.Instance.OnHoverExit();
     }
 
     public virtual void OnClick()

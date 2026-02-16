@@ -27,16 +27,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057512837359390230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.43, y: 1.43, z: 1.43}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalScale: {x: 2.11, y: 2.11, z: 2.11}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3906509136462137307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -19}
-  m_SizeDelta: {x: 18.772293, y: 20.235504}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -9.386139, y: -10.117752}
+  m_SizeDelta: {x: 18.772278, y: 20.235504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5709180356269088454
 CanvasRenderer:
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.75686276}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -166,7 +166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5000305, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4372093263067493973
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2038969533842635111, guid: 0cfb9b54ec2e9ce4eada6ef8e83ff509, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4312cac8d0f2b404ea09bbf22454ffa4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -380,10 +380,10 @@ RectTransform:
   - {fileID: 5014526327348869741}
   m_Father: {fileID: 3906509136462137307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236, y: -0}
-  m_SizeDelta: {x: 29.6214, y: 30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 14.810699, y: -0}
+  m_SizeDelta: {x: 29.621399, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3796910069869446087
 CanvasRenderer:
@@ -518,10 +518,10 @@ RectTransform:
   - {fileID: 6563694708729284515}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 140, y: 177}
-  m_SizeDelta: {x: 258.13953, y: 342.8771}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 485.5234, y: 342.8771}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4843555009295938960
 CanvasRenderer:
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7026072809785863268}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -587,7 +587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Script.RomainScript.Books.BookUI
   <BookType>k__BackingField: 2
   canvasGroup: {fileID: 1548882675798590172}
-  image001: {fileID: 7093091445144075789}
+  image01: {fileID: 7093091445144075789}
   image02: {fileID: 2816931395326881816}
 --- !u!1 &7093091445144075789
 GameObject:
@@ -623,7 +623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5000305, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7765710538668461876
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6223498949628079934, guid: 7c901dfe5369d8f4b87b61694888628a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25b1ac664d63b4c4dafc289628f9d7c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -837,10 +837,10 @@ RectTransform:
   - {fileID: 6738991793453471599}
   m_Father: {fileID: 3906509136462137307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232, y: 0}
-  m_SizeDelta: {x: 29.6214, y: 30}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -14.810699, y: 0}
+  m_SizeDelta: {x: 29.621399, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1816472765749981602
 CanvasRenderer:

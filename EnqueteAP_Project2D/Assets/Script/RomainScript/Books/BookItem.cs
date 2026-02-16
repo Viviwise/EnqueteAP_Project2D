@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using Object = UnityEngine.Object;
 
 namespace Script.RomainScript.Books
 {
@@ -19,7 +20,7 @@ namespace Script.RomainScript.Books
         {
             pickable = GetComponent<ItemPickable>();
             cam = Camera.main;
-            uiManager = GameObject.FindFirstObjectByType<BookUIManager>();
+            uiManager = Object.FindFirstObjectByType<BookUIManager>();
             
         }
 

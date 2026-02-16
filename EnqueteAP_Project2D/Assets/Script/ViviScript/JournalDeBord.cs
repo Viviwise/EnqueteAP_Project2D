@@ -47,8 +47,8 @@ public class JournalDeBord : MonoSaveListener
     {
         journalOpen = !journalOpen;
 
-        journalPanel.SetActive(journalOpen);
-        noteInputField.gameObject.SetActive(journalOpen);
+        journalPanel.SetActive(true);
+        noteInputField.gameObject.SetActive(true);
 
         if (journalOpen)
             noteInputField.ActivateInputField();

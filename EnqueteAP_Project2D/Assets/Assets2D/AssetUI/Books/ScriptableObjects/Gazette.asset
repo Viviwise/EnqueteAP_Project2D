@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3e03a2080fb4b9488925cff0fa8153d, type: 3}
-  m_Name: Book3
+  m_Name: Gazette
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItemData
-  itemName: Book3
-  itemDescription: Book3
-  itemPrefab: {fileID: 5721531520701262417, guid: 3210eb161b9348a4782ed111a8c11f54, type: 3}
+  itemName: Gazette
+  itemDescription: Gazette
+  itemPrefab: {fileID: 1744579149310203019, guid: 9f3e95920d173a8438a294c6f1436180, type: 3}
   itemType: 0
-  bookType: 2
-  itemSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  bookType: 3
+  itemSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
