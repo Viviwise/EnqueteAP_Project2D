@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using Script.RomainScript.Books;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     [SerializeField] private Camera cam;
     [FormerlySerializedAs("uiManager")] [SerializeField]
     private BookUIManager bookUIManager;
+
+    [SerializeField] private GameObject deskTop;
     
     GameObject draggedObject;
     GameObject lastItemSlot;
@@ -50,7 +53,8 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             
             InventorySlot lastItemSlotComponent = lastItemSlot.GetComponent<InventorySlot>();
             InventoryItem inventoryItem = draggedObject.GetComponent<InventoryItem>();
-
+            
+            
             
             //No Items in the slots
             if (isOverSlot && slot.heldItem == null)
@@ -69,14 +73,15 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     slot.SetHeldItem(inventoryItem);
                 }
                 //Return Item LastSlot
-                else if (pointerCurrentObject.name != "Drop")
+                else if (pointerCurrentObject.name != "Drop") //(pointerCurrentObject.GameObject() != deskTop)
                 {
                     lastItemSlotComponent.SetHeldItem(inventoryItem);
-                    
+
                 }
                 //Drop
                 else
                 {
+                    Debug.Log("1");
                     Vector3 position = cam.ScreenToWorldPoint(Input.mousePosition);
                     position.z = 0f;
 
@@ -86,6 +91,7 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                     lastItemSlotComponent.heldItem = null;
                     Destroy(draggedObject);
                 }
+                Debug.Log("2");
             }
 
             draggedObject = null;
