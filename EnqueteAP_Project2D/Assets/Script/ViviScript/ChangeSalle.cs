@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ChangeSalle : MonoBehaviour
@@ -18,8 +19,10 @@ public class ChangeSalle : MonoBehaviour
 
     public Button goToReportSpaceButton;
     public Button goToReportC1Button;
-    public  Button goToReportC2Button;
-    public  Button goToReportC3Button;
+    public Button goToReportC2Button;
+    public Button goToReportC3Button;
+    public Button goToReportFinalButton;
+    public Button quitReportFinalButton;
 
     public Button goToSalleExamButton;
     public Button goToBureauButton;
@@ -31,7 +34,8 @@ public class ChangeSalle : MonoBehaviour
     private Vector3 bureauPosition;
     private Vector3 tableBureauPosition;
     private Vector3 reportSpacePosition;
-    private Vector3 reportC1;
+    private Vector3 reportPosition;
+    private Vector3 reportFinalPosition;
 
     void Start()
     {
@@ -41,9 +45,9 @@ public class ChangeSalle : MonoBehaviour
         bureauPosition = new Vector3(40f, 0f, -10f);
         tableBureauPosition = new Vector3(60f, 0f, -10f);
         reportSpacePosition = new Vector3(80f, 0f, -10f);
-        reportC1 = new Vector3(100f, 0f, -10f);
+        reportPosition = new Vector3(100f, 0f, -10f);
+        reportFinalPosition = new Vector3(120f, 0f, -10f);
         
-        cam.transform.position = bureauPosition;
 
         //button analyse et cadavres
         salleExamUI.SetActive(false);
@@ -55,11 +59,14 @@ public class ChangeSalle : MonoBehaviour
         goToSalleExamButton.gameObject.SetActive(true);
         goToBureauButton.gameObject.SetActive(false);
         goToTableBureauButton.gameObject.SetActive(true);
-        goToReportSpaceButton.gameObject.SetActive(false);
         
-        goToReportC1Button.gameObject.SetActive(true);
-        goToReportC2Button.gameObject.SetActive(true);
-        goToReportC3Button.gameObject.SetActive(true);
+        goToReportSpaceButton.gameObject.SetActive(false);
+        goToReportFinalButton.gameObject.SetActive(false);
+        quitReportFinalButton.gameObject.SetActive(false);
+        
+        goToReportC1Button.gameObject.SetActive(false);
+        goToReportC2Button.gameObject.SetActive(false);
+        goToReportC3Button.gameObject.SetActive(false);
         
         //button accès cadavres
         goToExamC1Button.gameObject.SetActive(false);
@@ -73,10 +80,15 @@ public class ChangeSalle : MonoBehaviour
         goToSalleExamButton.onClick.AddListener(GoToSalleExam);
         goToBureauButton.onClick.AddListener(GoToBureau);
         goToTableBureauButton.onClick.AddListener(GoToTableBureau);
+        
         goToReportSpaceButton.onClick.AddListener(GoToReportSpace);
         goToReportC1Button.onClick.AddListener(GoToReportCadavre);
         goToReportC2Button.onClick.AddListener(GoToReportCadavre);
         goToReportC3Button.onClick.AddListener(GoToReportCadavre);
+        
+        goToReportFinalButton.onClick.AddListener(GoToReportFinal);
+        
+        cam.transform.position = bureauPosition;
     }
     
     public void GoToExaminationC1()
@@ -123,7 +135,7 @@ public class ChangeSalle : MonoBehaviour
     }
     public void GoToReportCadavre()
     {
-        cam.transform.position = reportC1;
+        cam.transform.position = reportPosition;
         
         goToSalleExamButton.gameObject.SetActive(false);
         goToReportSpaceButton.gameObject.SetActive(false);
@@ -146,8 +158,10 @@ public class ChangeSalle : MonoBehaviour
         goToExamC1Button.gameObject.SetActive(false);
         goToExamC2Button.gameObject.SetActive(false);
         goToExamC3Button.gameObject.SetActive(false);
+        
         goToBureauButton.gameObject.SetActive(false);
         goToTableBureauButton.gameObject.SetActive(false);
+        
         goToReportSpaceButton.gameObject.SetActive(false);
     }
     
@@ -169,6 +183,7 @@ public class ChangeSalle : MonoBehaviour
         goToBureauButton.gameObject.SetActive(true);
         goToTableBureauButton.gameObject.SetActive(false);
         goToReportSpaceButton.gameObject.SetActive(true);
+        goToReportFinalButton.gameObject.SetActive(false);
     }
 
     public void GoToBureau()
@@ -186,7 +201,9 @@ public class ChangeSalle : MonoBehaviour
         goToExamC3Button.gameObject.SetActive(false);
         goToBureauButton.gameObject.SetActive(false);
         goToTableBureauButton.gameObject.SetActive(true);
+        
         goToReportSpaceButton.gameObject.SetActive(false);
+        goToReportFinalButton.gameObject.SetActive(false);
     }
 
     public void GoToTableBureau()
@@ -205,6 +222,17 @@ public class ChangeSalle : MonoBehaviour
         goToBureauButton.gameObject.SetActive(true);
         goToTableBureauButton.gameObject.SetActive(false);
         goToReportSpaceButton.gameObject.SetActive(false);
+        
+        goToReportFinalButton.gameObject.SetActive(true);
+        quitReportFinalButton.gameObject.SetActive(false);
+    }
 
+    public void GoToReportFinal()
+    {
+        cam.transform.position = reportFinalPosition;
+        
+        goToTableBureauButton.gameObject.SetActive(false);
+        goToReportFinalButton.gameObject.SetActive(false);
+        quitReportFinalButton.gameObject.SetActive(true);
     }
 }
