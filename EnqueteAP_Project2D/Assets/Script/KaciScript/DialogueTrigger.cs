@@ -8,9 +8,15 @@ public class DialogueTrigger : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (DialogueManager.instance != null && !DialogueManager.instance.IsDialogueActive())
+        if (DialogueManager.instance == null) return;
+
+        if (!DialogueManager.instance.IsDialogueActive())
         {
             DialogueManager.instance.StartDialogue(dialogue);
+        }
+        else
+        {
+            DialogueManager.instance.DisplayNextSentence();
         }
     }
 }
