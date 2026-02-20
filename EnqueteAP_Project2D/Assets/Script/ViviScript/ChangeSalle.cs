@@ -228,6 +228,8 @@ public class ChangeSalle : MonoBehaviour
         
         goToReportFinalButton.gameObject.SetActive(true);
         quitReportFinalButton.gameObject.SetActive(false);
+        quitReportFinalButton.gameObject.SetActive(false);
+        conclusionUI.SetActive(false);
     }
 
     public void GoToReportFinal()
