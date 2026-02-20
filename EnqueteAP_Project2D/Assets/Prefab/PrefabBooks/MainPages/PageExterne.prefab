@@ -569,7 +569,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7026072809785863268}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -587,6 +587,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Script.RomainScript.Books.BookUI
   <BookType>k__BackingField: 2
   canvasGroup: {fileID: 1548882675798590172}
+  soundUsed: {fileID: 0}
+  soundExit: {fileID: 0}
   image01: {fileID: 7093091445144075789}
   image02: {fileID: 2816931395326881816}
 --- !u!1 &7093091445144075789

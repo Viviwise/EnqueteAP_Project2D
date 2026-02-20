@@ -17,4 +17,4 @@ MonoBehaviour:
   itemPrefab: {fileID: 1008116849418307739, guid: 2f961c921ae10ce40a3697354e4e3b7b, type: 3}
   itemType: 0
   bookType: 1
-  itemSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  itemSprite: {fileID: -6563065900949534927, guid: 096ba01dd7f274f4792443cb54f42a37, type: 3}

@@ -16,4 +16,5 @@ MonoBehaviour:
   itemDescription: Herbier
   itemPrefab: {fileID: 8147065138589303309, guid: 8233fb1a7dae3f943a7ea037bb49aa1c, type: 3}
   itemType: 0
-  itemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  bookType: 0
+  itemSprite: {fileID: 4918183479037643571, guid: a7e9ddd11e997e54c99564b747998bc3, type: 3}
