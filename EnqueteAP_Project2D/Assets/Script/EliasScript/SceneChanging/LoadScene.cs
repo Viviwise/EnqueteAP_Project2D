@@ -5,12 +5,6 @@ namespace Script.EliasScript
 {
     public class LoadScene : MonoBehaviour
     {
-        public void LoadToWorkScene()
-        {
-            Debug.Log("button is clicked");
-            SceneManager.LoadScene("WorkScene");
-        }
-
         public void LoadToSceneSalleExam()
         {
             Debug.Log("button is clicked");
