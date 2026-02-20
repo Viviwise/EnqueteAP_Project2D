@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 822610ddbdc289d4db86f365867bfdcc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2508924400292994
+    second: C2 cotes dessus _0
+  - first:
+      213: 7304959817932818180
+    second: C2 cotes dessus _1
+  - first:
+      213: 5329572946054523272
+    second: C2 cotes dessus _2
+  - first:
+      213: -6653793946059660673
+    second: C2 cotes dessus _3
+  - first:
+      213: 5965161576703400382
+    second: C2 cotes dessus _4
+  - first:
+      213: -3065860107132870063
+    second: C2 cotes dessus _5
+  - first:
+      213: 4689238853874700991
+    second: C2 cotes dessus _6
+  - first:
+      213: -354280625582956327
+    second: C2 cotes dessus _7
+  - first:
+      213: -8096997587627227943
+    second: C2 cotes dessus _8
+  - first:
+      213: 7813742971333999778
+    second: C2 cotes dessus _9
+  - first:
+      213: -1241244025527245029
+    second: C2 cotes dessus _10
+  - first:
+      213: 2101348979316674681
+    second: C2 cotes dessus _11
+  - first:
+      213: 2251495744624813272
+    second: C2 cotes dessus _12
+  - first:
+      213: -5989409084758922236
+    second: C2 cotes dessus _13
+  - first:
+      213: 3985501254162436035
+    second: C2 cotes dessus _14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: C2 cotes dessus _0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 112
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b2a54852617fff0800000000000000
+      internalID: -2508924400292994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 139
+        width: 29
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4074366404e606560800000000000000
+      internalID: 7304959817932818180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 139
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889ac1e6b5276f940800000000000000
+      internalID: 5329572946054523272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 105
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f72287cc8a9f8a3a0800000000000000
+      internalID: -6653793946059660673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 108
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb9173769d288c250800000000000000
+      internalID: 5965161576703400382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _5
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 96
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152ed47e970e375d0800000000000000
+      internalID: -3065860107132870063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _6
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 59
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb2592894e5831140800000000000000
+      internalID: 4689238853874700991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 82
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d02359e5a7551bf0800000000000000
+      internalID: -354280625582956327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 64
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4c842089fa1af80800000000000000
+      internalID: -8096997587627227943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 45
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac719c55ddff6c60800000000000000
+      internalID: 7813742971333999778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _10
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 31
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b176fda922736cee0800000000000000
+      internalID: -1241244025527245029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _11
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 30
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970dc4563cd792d10800000000000000
+      internalID: 2101348979316674681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _12
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 38
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d46aa7637bee3f10800000000000000
+      internalID: 2251495744624813272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 18
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c6270bb2851eca0800000000000000
+      internalID: -5989409084758922236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C2 cotes dessus _14
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 16
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfc93a46485f4730800000000000000
+      internalID: 3985501254162436035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      C2 cotes dessus _0: -2508924400292994
+      C2 cotes dessus _1: 7304959817932818180
+      C2 cotes dessus _10: -1241244025527245029
+      C2 cotes dessus _11: 2101348979316674681
+      C2 cotes dessus _12: 2251495744624813272
+      C2 cotes dessus _13: -5989409084758922236
+      C2 cotes dessus _14: 3985501254162436035
+      C2 cotes dessus _2: 5329572946054523272
+      C2 cotes dessus _3: -6653793946059660673
+      C2 cotes dessus _4: 5965161576703400382
+      C2 cotes dessus _5: -3065860107132870063
+      C2 cotes dessus _6: 4689238853874700991
+      C2 cotes dessus _7: -354280625582956327
+      C2 cotes dessus _8: -8096997587627227943
+      C2 cotes dessus _9: 7813742971333999778
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
