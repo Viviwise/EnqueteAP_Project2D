@@ -10,6 +10,7 @@ public class ChangeSalle : MonoBehaviour
     public GameObject examinationC2UI;
     public GameObject examinationC3UI;
     //public GameObject tableBureauUI;
+    public GameObject conclusionUI;
 
     public Camera cam;
 
@@ -89,6 +90,8 @@ public class ChangeSalle : MonoBehaviour
         goToReportFinalButton.onClick.AddListener(GoToReportFinal);
         
         cam.transform.position = bureauPosition;
+        
+        conclusionUI.SetActive(false);
     }
     
     public void GoToExaminationC1()
@@ -234,5 +237,6 @@ public class ChangeSalle : MonoBehaviour
         goToTableBureauButton.gameObject.SetActive(false);
         goToReportFinalButton.gameObject.SetActive(false);
         quitReportFinalButton.gameObject.SetActive(true);
+        conclusionUI.SetActive(true);
     }
 }
