@@ -8,19 +8,27 @@ namespace Script.RomainScript.Books
     {
         [SerializeField] private BookUI[] booksUI;
 
+        private BookUI currentOpenBook;
+
         public void OpenBook(BookType bookType)
         {
             foreach (var ui in booksUI)
             {
                 if (ui.BookType == bookType)
                 {
-                    ui.Open();
-                }
-                else
-                {
-                    ui.Close();
-                }
+                    if (currentOpenBook == ui)
+                    {
+                        ui.Close();
+                        currentOpenBook = null;
+                        return;
+                    }
                     
+                    if (currentOpenBook != null)
+                        currentOpenBook.Close();
+                    
+                    ui.Open();
+                    currentOpenBook = ui;
+                }
             }
         }
     }
