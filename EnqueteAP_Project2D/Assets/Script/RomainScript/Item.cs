@@ -2,14 +2,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class Item : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Item : MonoBehaviour
 {
     private ItemPickable itemPickable;
 
     [SerializeField] private Camera cam;
     [SerializeField] private InventoryManager inventoryManager;
 
-    private void Update()
+    /*private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -27,20 +27,5 @@ public class Item : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDragHa
                 }
             }
         }
-    }
-
-    /*public void OnBeginDrag(PointerEventData eventData)
-    {
-        //throw new System.NotImplementedException();
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        //throw new System.NotImplementedException();
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        //throw new System.NotImplementedException();
     }*/
 }

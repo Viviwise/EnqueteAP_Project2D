@@ -33,15 +33,13 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             GameObject clickedObject = null;
-
-            // PRIORITÉ UI
+            
             if (eventData.pointerCurrentRaycast.gameObject != null)
             {
                 clickedObject = eventData.pointerCurrentRaycast.gameObject;
             }
             else
             {
-                // PHYSICS 2D
                 Vector2 worldPoint = cam.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
 
@@ -68,15 +66,13 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         if (draggedObject != null && eventData.button == PointerEventData.InputButton.Left)
         { 
             GameObject pointerCurrentObject = null;
-
-            // PRIORITÉ UI
+            
             if (eventData.pointerCurrentRaycast.gameObject != null)
             {
                 pointerCurrentObject = eventData.pointerCurrentRaycast.gameObject;
             }
             else
             {
-                // PHYSICS 2D
                 Vector2 worldPoint = cam.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
 
@@ -157,6 +153,20 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             inventorySlot.SetHeldItem(inventoryItem);
             Destroy(pickedItem);
         }
+        
+    }
+    
+    //=============ADDED FOR DRAG & DROP PICK==============//
+    
+    public void AddItemToSlot(GameObject pickedItem, InventorySlot slot)
+    {
+        GameObject newItem = Instantiate(itemPrefab);
+        InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
+        inventoryItem.itemData = pickedItem.GetComponent<ItemPickable>().itemData;
+
+        slot.SetHeldItem(inventoryItem);
+
+        Destroy(pickedItem);
     }
 }
 
