@@ -1,5 +1,4 @@
 using Script.Comparaison;
-using UnityEngine;
 
 public class InfoBook : Interactable
 {

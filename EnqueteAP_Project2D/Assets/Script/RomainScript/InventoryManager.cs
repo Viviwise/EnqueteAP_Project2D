@@ -1,8 +1,5 @@
-using System.Security.Cryptography;
 using Script.RomainScript.Books;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 

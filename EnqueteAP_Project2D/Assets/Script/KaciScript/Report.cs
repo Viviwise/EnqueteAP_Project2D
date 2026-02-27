@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Script.EliasScript;
 using Script.EliasScript.SceneListeners;
-using TMPro;
 using UnityEngine;
 
 namespace Script.KaciScript

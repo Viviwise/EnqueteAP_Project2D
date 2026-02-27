@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Script.EliasScript;
 using Script.EliasScript.SceneListeners;
 using Script.KaciScript;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

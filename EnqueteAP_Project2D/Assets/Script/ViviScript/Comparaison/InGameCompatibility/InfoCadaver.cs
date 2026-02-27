@@ -1,8 +1,5 @@
 using UnityEngine;
-using Script.Comparaison;
 using UnityEngine.EventSystems;
-using Script.KaciScript;
-
 
 
 public class InfoCadaver : Interactable

@@ -1,11 +1,5 @@
-using System.Drawing;
-using TMPro.SpriteAssetUtilities;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
-using Color = UnityEngine.Color;
 
 
 public class ItemPickable : MonoBehaviour

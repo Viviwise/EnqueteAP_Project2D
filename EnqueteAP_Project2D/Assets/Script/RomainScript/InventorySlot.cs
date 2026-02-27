@@ -1,4 +1,3 @@
-using Script.RomainScript.Books;
 using UnityEngine;
 
 public class InventorySlot : MonoBehaviour
