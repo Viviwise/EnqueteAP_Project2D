@@ -1,13 +1,13 @@
+using UnityEditor;
+using UnityEngine;
+using Script.Comparaison;
+
 namespace Script.Comparaison.Editor
 {
-    using UnityEditor;
-    using UnityEngine;
-
     [CustomEditor(typeof(CompatibilityDatabase))]
-
-    public class CompatibilityDatabaseEditor : Editor
+    public class CompatibilityDatabaseEditor : UnityEditor.Editor
     {
-       public override void OnInspectorGUI()
+        public override void OnInspectorGUI()
         {
             CompatibilityDatabase db = (CompatibilityDatabase)target;
 
@@ -18,25 +18,25 @@ namespace Script.Comparaison.Editor
 
             GUILayout.Space(10);
 
+            if (db.entries == null || db.entries.Count == 0)
+            {
+                EditorGUILayout.HelpBox("Aucune entrée. Clique sur Generate Entries.", MessageType.Warning);
+            }
+            else
+            {
+                EditorGUILayout.HelpBox($"Entries: {db.entries.Count}", MessageType.Info);
+            }
+
+            GUILayout.Space(10);
+
             foreach (var person in db.people)
             {
+                if (string.IsNullOrEmpty(person))
+                    continue;
+
                 EditorGUILayout.LabelField(person, EditorStyles.boldLabel);
 
-                // Plantes
-                GUILayout.Label("Plante:");
-                DrawCategory(db, person, Category.Plante, db.planteCount);
-
-                // Blessures internes
-                GUILayout.Label("Blessures internes:");
-                DrawCategory(db, person, Category.BlessureInt, db.blessureInterneCount);
-
-                // Blessures externes
-                GUILayout.Label("Blessures externes:");
-                DrawCategory(db, person, Category.BlessureExt, db.blessureExterneCount);
-
-                // Gazette
-                GUILayout.Label("Gazette:");
-                DrawCategory(db, person, Category.Gazette, db.gazetteCount);
+                DrawTable(db, person);
 
                 GUILayout.Space(15);
             }
@@ -47,34 +47,64 @@ namespace Script.Comparaison.Editor
             }
         }
 
-        private void DrawCategory(CompatibilityDatabase db, string person, Category category, int count)
+        private void DrawTable(CompatibilityDatabase db, string person)
         {
+            EditorGUILayout.BeginVertical("box");
+
+            DrawCategoryRow(db, person, Category.Plante, db.planteCount, "Plantes");
+            DrawCategoryRow(db, person, Category.BlessureInt, db.blessureInterneCount, "Blessures int.");
+            DrawCategoryRow(db, person, Category.BlessureExt, db.blessureExterneCount, "Blessures ext.");
+            DrawCategoryRow(db, person, Category.Gazette, db.gazetteCount, "Gazette");
+
+            EditorGUILayout.EndVertical();
+        }
+
+        private void DrawCategoryRow(CompatibilityDatabase db, string person, Category category, int count, string label)
+        {
+            EditorGUILayout.LabelField(label, EditorStyles.miniBoldLabel);
             EditorGUILayout.BeginHorizontal();
 
             for (int i = 1; i <= count; i++)
             {
-                var entry = db.entries.Find(e => e.person == person && e.category == category && e.infoNumber == i);
-                if (entry == null) continue; // au cas où GenerateEntries n'a pas été lancé
+                var entry = db.entries.Find(e =>
+                    e.person == person &&
+                    e.category == category &&
+                    e.infoNumber == i);
 
-                EditorGUILayout.BeginVertical();
+                if (entry == null)
+                {
+                    DrawMissingCell();
+                    continue;
+                }
 
-                EditorGUILayout.LabelField(i.ToString(), GUILayout.Width(20));
-
-                EditorGUILayout.BeginHorizontal();
-
-                if (GUILayout.Toggle(entry.compatibility == Compatibility.Compatible, "OK", "Button"))
-                    entry.compatibility = Compatibility.Compatible;
-                if (GUILayout.Toggle(entry.compatibility == Compatibility.PartiallyCompatible, "MEH", "Button"))
-                    entry.compatibility = Compatibility.PartiallyCompatible;
-                if (GUILayout.Toggle(entry.compatibility == Compatibility.Incompatible, "NO", "Button"))
-                    entry.compatibility = Compatibility.Incompatible;
-
-                EditorGUILayout.EndHorizontal();
-                EditorGUILayout.EndVertical();
+                DrawToggleCell(entry);
             }
 
             EditorGUILayout.EndHorizontal();
         }
 
-    } 
+        private void DrawToggleCell(CompatibilityEntry entry)
+        {
+            EditorGUILayout.BeginVertical("box", GUILayout.Width(45));
+
+            EditorGUILayout.LabelField(entry.infoNumber.ToString(), GUILayout.Width(20));
+
+            entry.compatibility = GUILayout.Toggle(entry.compatibility == Compatibility.Compatible, "OK", "Button")
+                ? Compatibility.Compatible
+                : entry.compatibility;
+
+            entry.compatibility = GUILayout.Toggle(entry.compatibility == Compatibility.Incompatible, "NO", "Button")
+                ? Compatibility.Incompatible
+                : entry.compatibility;
+
+            EditorGUILayout.EndVertical();
+        }
+
+        private void DrawMissingCell()
+        {
+            EditorGUILayout.BeginVertical("box", GUILayout.Width(45));
+            EditorGUILayout.LabelField("?", GUILayout.Width(20));
+            EditorGUILayout.EndVertical();
+        }
+    }
 }

@@ -1,18 +1,14 @@
 using UnityEngine;
-using Script.Comparaison;
 using UnityEngine.EventSystems;
-using Script.KaciScript;
 
-
-
-public class InfoCadaver : Interactable
+public class InfoCadaver : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] public string blessureID;
-    
+    public string blessureID;
+
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("InfoCadaver CLICKED");
+
         ComparaisonManagerInGame.Instance.SelectPerson(this);
-        Debug.Log("InfoCadaver activé");
     }
-    
 }
