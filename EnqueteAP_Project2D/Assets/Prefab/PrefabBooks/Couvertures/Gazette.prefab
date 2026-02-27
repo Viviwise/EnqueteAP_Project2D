@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2460072388585623841}
   - component: {fileID: 1536390744899897897}
   - component: {fileID: 4274323560625842369}
+  - component: {fileID: 406876830239462592}
   m_Layer: 0
   m_Name: Gazette
   m_TagString: Book
@@ -30,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.47, y: 0.82, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.1999999, z: 1.1999999}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -164,3 +165,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.05, y: 2.72}
   m_EdgeRadius: 0
+--- !u!114 &406876830239462592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744579149310203019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d94f89c0a1bd014e900bd6318050870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoveredBook
+  hoverColor: {r: 1, g: 0.5338542, b: 0, a: 0.6862745}

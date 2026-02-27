@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -22,8 +23,12 @@ public class ChangeSalle : MonoBehaviour
     public Button goToReportC1Button;
     public Button goToReportC2Button;
     public Button goToReportC3Button;
+    
     public Button goToReportFinalButton;
     public Button quitReportFinalButton;
+    public TMP_Dropdown dropDownC1;
+    public TMP_Dropdown dropDownC2;
+    public TMP_Dropdown dropDownC3;
 
     public Button goToSalleExamButton;
     public Button goToBureauButton;
@@ -64,6 +69,9 @@ public class ChangeSalle : MonoBehaviour
         goToReportSpaceButton.gameObject.SetActive(false);
         goToReportFinalButton.gameObject.SetActive(false);
         quitReportFinalButton.gameObject.SetActive(false);
+        dropDownC1.gameObject.SetActive(false);
+        dropDownC2.gameObject.SetActive(false);
+        dropDownC3.gameObject.SetActive(false);
         
         goToReportC1Button.gameObject.SetActive(false);
         goToReportC2Button.gameObject.SetActive(false);
@@ -207,6 +215,9 @@ public class ChangeSalle : MonoBehaviour
         
         goToReportSpaceButton.gameObject.SetActive(false);
         goToReportFinalButton.gameObject.SetActive(false);
+        dropDownC1.gameObject.SetActive(false);
+        dropDownC2.gameObject.SetActive(false);
+        dropDownC3.gameObject.SetActive(false);
     }
 
     public void GoToTableBureau()
@@ -230,6 +241,9 @@ public class ChangeSalle : MonoBehaviour
         quitReportFinalButton.gameObject.SetActive(false);
         quitReportFinalButton.gameObject.SetActive(false);
         conclusionUI.SetActive(false);
+        dropDownC1.gameObject.SetActive(false);
+        dropDownC2.gameObject.SetActive(false);
+        dropDownC3.gameObject.SetActive(false);
     }
 
     public void GoToReportFinal()
@@ -240,5 +254,8 @@ public class ChangeSalle : MonoBehaviour
         goToReportFinalButton.gameObject.SetActive(false);
         quitReportFinalButton.gameObject.SetActive(true);
         conclusionUI.SetActive(true);
+        dropDownC1.gameObject.SetActive(true);
+        dropDownC2.gameObject.SetActive(true);
+        dropDownC3.gameObject.SetActive(true);
     }
 }

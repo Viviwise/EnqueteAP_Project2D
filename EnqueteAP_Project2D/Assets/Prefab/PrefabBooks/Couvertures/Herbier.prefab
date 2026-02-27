@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4669072620030542090}
   - component: {fileID: 807144967697716195}
   - component: {fileID: 9180699676887419844}
+  - component: {fileID: 317074207916706440}
   m_Layer: 0
   m_Name: Herbier
   m_TagString: Book
@@ -152,7 +153,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.016975403, y: -0.025465846}
+  m_Offset: {x: 0.093967795, y: -0.025465846}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,5 +163,18 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.522049, y: 3.483978}
-  m_EdgeRadius: 0
+  m_Size: {x: 2.6760337, y: 3.483978}
+  m_EdgeRadius: 0.19
+--- !u!114 &317074207916706440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8147065138589303309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d94f89c0a1bd014e900bd6318050870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoveredBook
+  hoverColor: {r: 1, g: 0.5338542, b: 0, a: 0.6862745}

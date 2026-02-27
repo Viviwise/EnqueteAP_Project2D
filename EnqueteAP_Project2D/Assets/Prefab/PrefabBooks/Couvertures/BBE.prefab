@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -850463537126042611}
   - component: {fileID: 6116717371005269369}
   - component: {fileID: 514413248589501245}
+  - component: {fileID: 3915276441204435766}
   m_Layer: 0
   m_Name: BBE
   m_TagString: Untagged
@@ -164,3 +165,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcbc4b5f7964ec193758f02d77da3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Script.RomainScript.Books.BookItem
+--- !u!114 &3915276441204435766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721531520701262417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d94f89c0a1bd014e900bd6318050870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoveredBook
+  hoverColor: {r: 1, g: 0.5338542, b: 0, a: 0.6862745}
