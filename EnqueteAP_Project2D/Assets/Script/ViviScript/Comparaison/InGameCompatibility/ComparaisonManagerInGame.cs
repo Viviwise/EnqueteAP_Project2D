@@ -80,6 +80,7 @@ public class ComparaisonManagerInGame : MonoBehaviour
 
         previouslySelectedPerson = selectedPerson;
         previouslySelectedInfo = selectedInfo;
+        
     }
 
     
@@ -113,18 +114,39 @@ public class ComparaisonManagerInGame : MonoBehaviour
         validationLine.endColor = color;
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (IsClickOnSelectable())
+                return;
+
+            DeselectAll();
+        }
+    }
+    private bool IsClickOnSelectable()
+    {
+        if (UnityEngine.EventSystems.EventSystem.current == null)
+            return false;
+
+        if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            return true;
+
+        return false;
+    }
+    private void DeselectAll()
+    {
+        selectedPerson = null;
+        selectedInfo = null;
+        previouslySelectedPerson = null;
+        previouslySelectedInfo = null;
+
+        HideValidationLine();
+    }
     private void HideValidationLine()
     {
         if (validationLine != null)
             validationLine.gameObject.SetActive(false);
-        
-        if (selectedPerson == previouslySelectedPerson && selectedInfo == previouslySelectedInfo)
-        {
-            HideValidationLine();
-            selectedPerson = null;
-            selectedInfo = null;
-        }
-       
     }
     
 
