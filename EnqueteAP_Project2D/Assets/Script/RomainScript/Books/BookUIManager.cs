@@ -1,69 +1,71 @@
-﻿using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
-using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Script.RomainScript.Books
 {
     public class BookUIManager : MonoBehaviour
     {
         [SerializeField] private BookUI[] booksUI;
+        [SerializeField] private InventoryManager inventoryManager;
+        [SerializeField] private Button buttonReportEnd;
 
         private BookUI currentOpenBook;
-        private ItemPickable itemPickable;
-        private InventoryManager inventoryManager;
-        
-        //=============Close Book if clicked elsewhere============//
 
-        /*private void Update()
-        {
-            if (currentOpenBook == null)
-                return;
-            
-            if (Input.GetMouseButtonDown(0))
-            {
-                // Vérifie si on clique sur une UI
-                if (EventSystem.current.IsPointerOverGameObject())
-                {
-                    GameObject clicked = EventSystem.current.currentSelectedGameObject;
-
-                    // Elément du livre -> Not Close
-                    if (clicked != null && clicked.transform.IsChildOf(currentOpenBook.transform))
-                        return;
-                }
-                CloseCurrentBook();
-            }
-        }*/
-        
-        //=========================//
+        public bool IsBookOpen => currentOpenBook != null;
 
         public void OpenBook(BookType bookType)
         {
+            // Si un livre est déjà ouvert -> on ne fait rien
+            if (currentOpenBook != null)
+                return;
+
             foreach (var ui in booksUI)
             {
                 if (ui.BookType == bookType)
                 {
-                    if (currentOpenBook != null)
-                    {
-                        currentOpenBook.Close();
-                    }
-                    
                     ui.Open();
                     currentOpenBook = ui;
+                    LockGameplay();
                     return;
-                    
                 }
             }
         }
 
-        private void CloseCurrentBook()
+        public void CloseCurrentBook()
         {
-            if (currentOpenBook != null)
-            {
-                currentOpenBook.Close();
-                currentOpenBook = null;
-            }
+            if (currentOpenBook == null)
+                return;
+
+            currentOpenBook.Close();
+            currentOpenBook = null;
+
+            UnlockGameplay();
+        }
+
+        private void LockGameplay()
+        {
+            if (inventoryManager != null)
+                inventoryManager.enabled = false;
+
+            ItemPickable[] items = FindObjectsByType<ItemPickable>(FindObjectsSortMode.None);
+            foreach (var item in items)
+                item.enabled = false;
+
+            if (buttonReportEnd != null)
+                buttonReportEnd.interactable = false;
+        }
+
+        private void UnlockGameplay()
+        {
+            if (inventoryManager != null)
+                inventoryManager.enabled = true;
+
+            ItemPickable[] items = FindObjectsByType<ItemPickable>(FindObjectsSortMode.None);
+            foreach (var item in items)
+                item.enabled = true;
+
+            if (buttonReportEnd != null)
+                buttonReportEnd.interactable = true;
         }
     }
 }

@@ -1,10 +1,6 @@
-using System.Drawing;
-using TMPro.SpriteAssetUtilities;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+using Script.RomainScript.Books;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 using Color = UnityEngine.Color;
 using Image = UnityEngine.UI.Image;
 
@@ -13,6 +9,9 @@ public class ItemPickable : MonoBehaviour
 {
     public InventoryItemData itemData;
     private GameObject bookSlot;
+    private BookUIManager bookUIManager;
+
+    
     [SerializeField] private Color originalColor;
     [SerializeField] private Color Color =  Color.orange;
     private Image image;
@@ -27,26 +26,33 @@ public class ItemPickable : MonoBehaviour
     {
         cam = Camera.main;
         startPosition = transform.position;
+
         bookSlot = GameObject.FindWithTag("BookSlot");
-        image =  bookSlot.GetComponent<Image>();
+        image = bookSlot.GetComponent<Image>();
         originalColor = image.color;
-        
+
+        bookUIManager = FindFirstObjectByType<BookUIManager>();
 
     }
 
     private void OnMouseDown()
     {
-        if (isDragging = true) ;
+        if (bookUIManager != null && bookUIManager.IsBookOpen)
+            return;
+        
+        isDragging = true;
         
         bookSlot.transform.localScale = new Vector3(1.3f, 1.3f , 0);
         image.color = Color;
-        
-        
     }
 
     private void OnMouseDrag()
     {
-        if (!isDragging) return;
+        if (!isDragging)
+            return;
+
+        if (bookUIManager != null && bookUIManager.IsBookOpen)
+            return;
 
         Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;

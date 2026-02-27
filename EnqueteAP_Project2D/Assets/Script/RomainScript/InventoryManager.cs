@@ -1,8 +1,5 @@
-using System.Security.Cryptography;
 using Script.RomainScript.Books;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
@@ -30,6 +27,9 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (bookUIManager != null && bookUIManager.IsBookOpen)
+            return;
+        
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             GameObject clickedObject = null;
