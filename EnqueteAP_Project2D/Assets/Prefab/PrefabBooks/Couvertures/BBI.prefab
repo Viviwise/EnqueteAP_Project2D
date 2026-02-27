@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5749159685086915063}
   - component: {fileID: -3229554502364049699}
   - component: {fileID: 1268911705427903233}
+  - component: {fileID: 7664063216183094668}
   - component: {fileID: 5100448041524322205}
   - component: {fileID: 4253482341077741111}
   m_Layer: 0
@@ -153,6 +154,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::itemPickable
   itemData: {fileID: 11400000, guid: b5bab5878985eb54596803cab5422bd8, type: 2}
+  bookSlot: {fileID: 3089387123222089242, guid: db23ac0e80a1d0942964005b563558dd, type: 3}
+--- !u!114 &7664063216183094668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008116849418307739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d94f89c0a1bd014e900bd6318050870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoveredBook
+  hoverColor: {r: 1, g: 0.9468432, b: 0, a: 1}
 --- !u!114 &5100448041524322205
 MonoBehaviour:
   m_ObjectHideFlags: 0

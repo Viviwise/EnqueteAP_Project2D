@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 808269827101370428}
   - component: {fileID: 7489256218387369411}
   - component: {fileID: 4669072620030542090}
+  - component: {fileID: 1046739642317789193}
   - component: {fileID: 807144967697716195}
   - component: {fileID: 9180699676887419844}
   - component: {fileID: 317074207916706440}
@@ -107,6 +108,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::itemPickable
   itemData: {fileID: 11400000, guid: d0513855806a7804e856cc1576f63391, type: 2}
+  bookSlot: {fileID: 3089387123222089242, guid: db23ac0e80a1d0942964005b563558dd, type: 3}
+--- !u!114 &1046739642317789193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8147065138589303309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d94f89c0a1bd014e900bd6318050870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoveredBook
+  hoverColor: {r: 1, g: 0.9468432, b: 0, a: 1}
 --- !u!114 &807144967697716195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,16 +180,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.6760337, y: 3.483978}
   m_EdgeRadius: 0.19
---- !u!114 &317074207916706440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147065138589303309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d94f89c0a1bd014e900bd6318050870, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HoveredBook
-  hoverColor: {r: 1, g: 0.5338542, b: 0, a: 0.6862745}
