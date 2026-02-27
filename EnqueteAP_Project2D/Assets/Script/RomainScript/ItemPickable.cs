@@ -1,9 +1,17 @@
+using System.Drawing;
+using TMPro.SpriteAssetUtilities;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
+using Color = UnityEngine.Color;
+
 
 public class ItemPickable : MonoBehaviour
 {
     public InventoryItemData itemData;
+    public GameObject bookSlot;
     
         //=============ADDED FOR DRAG & DROP Pick================//
     private Vector3 startPosition;
@@ -14,11 +22,16 @@ public class ItemPickable : MonoBehaviour
     {
         cam = Camera.main;
         startPosition = transform.position;
+
     }
 
     private void OnMouseDown()
     {
-        isDragging = true;
+        if (isDragging = true)
+        {
+            bookSlot.transform.localScale = new Vector3(1.3f, 1.3f , 0);
+        }
+        
     }
 
     private void OnMouseDrag()
@@ -33,6 +46,7 @@ public class ItemPickable : MonoBehaviour
     private void OnMouseUp()
     {
         isDragging = false;
+        bookSlot.transform.localScale = new Vector3(1, 1, 0);
 
         // Vérife
         PointerEventData pointerData = new PointerEventData(EventSystem.current);
