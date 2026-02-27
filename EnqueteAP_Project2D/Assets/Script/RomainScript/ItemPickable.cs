@@ -6,12 +6,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using Color = UnityEngine.Color;
+using Image = UnityEngine.UI.Image;
 
 
 public class ItemPickable : MonoBehaviour
 {
     public InventoryItemData itemData;
-    public GameObject bookSlot;
+    private GameObject bookSlot;
+    [SerializeField] private Color originalColor;
+    [SerializeField] private Color Color =  Color.orange;
+    private Image image;
+    
     
         //=============ADDED FOR DRAG & DROP Pick================//
     private Vector3 startPosition;
@@ -22,15 +27,20 @@ public class ItemPickable : MonoBehaviour
     {
         cam = Camera.main;
         startPosition = transform.position;
+        bookSlot = GameObject.FindWithTag("BookSlot");
+        image =  bookSlot.GetComponent<Image>();
+        originalColor = image.color;
+        
 
     }
 
     private void OnMouseDown()
     {
-        if (isDragging = true)
-        {
-            bookSlot.transform.localScale = new Vector3(1.3f, 1.3f , 0);
-        }
+        if (isDragging = true) ;
+        
+        bookSlot.transform.localScale = new Vector3(1.3f, 1.3f , 0);
+        image.color = Color;
+        
         
     }
 
@@ -46,7 +56,10 @@ public class ItemPickable : MonoBehaviour
     private void OnMouseUp()
     {
         isDragging = false;
+        
         bookSlot.transform.localScale = new Vector3(1, 1, 0);
+        image.color = originalColor;
+        
 
         // Vérife
         PointerEventData pointerData = new PointerEventData(EventSystem.current);
@@ -66,8 +79,6 @@ public class ItemPickable : MonoBehaviour
                 return;
             }
         }
-
-        // Si non slot -> position initiale
-        transform.position = startPosition;
     }
+    
 }

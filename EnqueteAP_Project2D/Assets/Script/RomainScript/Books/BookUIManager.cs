@@ -40,9 +40,6 @@ namespace Script.RomainScript.Books
             {
                 if (ui.BookType == bookType)
                 {
-                    if (currentOpenBook == ui)
-                        return;
-
                     if (currentOpenBook != null)
                         currentOpenBook.Close();
 
