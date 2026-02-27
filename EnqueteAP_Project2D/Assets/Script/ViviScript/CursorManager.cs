@@ -5,6 +5,7 @@ public class CursorManager : MonoBehaviour
     public Texture2D defaultCursor;
     public Texture2D hoverCursor;
 
+    private static CursorManager instance;
     private int hoverCount = 0;
 
     public static CursorManager Instance
@@ -13,27 +14,23 @@ public class CursorManager : MonoBehaviour
         {
             if (instance == null)
             {
-                GameObject gameObject = new GameObject("CursorManager");
-                instance = gameObject.AddComponent<CursorManager>();
-                
-                DontDestroyOnLoad(instance);
+                GameObject go = new GameObject("CursorManager");
+                instance = go.AddComponent<CursorManager>();
+                DontDestroyOnLoad(go);
             }
             return instance;
         }
     }
-    
-    private static CursorManager instance;
-    
-    
-    void Start()
+
+    private void Start()
     {
-        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+        SetCursor(defaultCursor);
     }
 
     public void OnHoverEnter()
     {
         hoverCount++;
-        Cursor.SetCursor(hoverCursor, Vector2.zero, CursorMode.Auto);
+        SetCursor(hoverCursor);
     }
 
     public void OnHoverExit()
@@ -41,6 +38,14 @@ public class CursorManager : MonoBehaviour
         hoverCount = Mathf.Max(hoverCount - 1, 0);
 
         if (hoverCount == 0)
-            Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+            SetCursor(defaultCursor);
+    }
+
+    private void SetCursor(Texture2D cursorTexture)
+    {
+        if (cursorTexture == null) return;
+
+        Vector2 hotspot = new Vector2(cursorTexture.width / 2f, cursorTexture.height / 5f);
+        Cursor.SetCursor(cursorTexture, hotspot, CursorMode.Auto);
     }
 }

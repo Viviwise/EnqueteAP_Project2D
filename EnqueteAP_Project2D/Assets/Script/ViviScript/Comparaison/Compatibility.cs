@@ -5,7 +5,7 @@ namespace Script.Comparaison
     public enum Compatibility
     {
         Compatible,
-        PartiallyCompatible,
-        Incompatible
+        Incompatible,
+        Undefined
     }
 }

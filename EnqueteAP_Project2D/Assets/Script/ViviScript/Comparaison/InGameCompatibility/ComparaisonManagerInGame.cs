@@ -38,23 +38,31 @@ public class ComparaisonManagerInGame : MonoBehaviour
 
     private void TryCheckCompatibility()
     {
-        if (selectedPerson == null || selectedInfo == null)
-            return;
+        Debug.Log("=== TryCheckCompatibility CALLED ===");
 
-        if (selectedPerson == previouslySelectedPerson &&
-            selectedInfo == previouslySelectedInfo)
+        if (selectedPerson == null)
         {
-            HideValidationLine();
-
-            selectedPerson = null;
-            selectedInfo = null;
-
-            previouslySelectedPerson = null;
-            previouslySelectedInfo = null;
-
-            Debug.Log("Sélection annulée");
+            Debug.Log("selectedPerson is NULL");
             return;
         }
+
+        if (selectedInfo == null)
+        {
+            Debug.Log("selectedInfo is NULL");
+            return;
+        }
+
+        Debug.Log("Person = " + selectedPerson.blessureID);
+        Debug.Log("Category = " + selectedInfo.category);
+        Debug.Log("InfoNumber = " + selectedInfo.infoNumber);
+
+        if (database == null)
+        {
+            Debug.LogError("DATABASE IS NULL");
+            return;
+        }
+
+        Debug.Log("Database entries count = " + database.entries.Count);
 
         var result = database.GetCompatibility(
             selectedPerson.blessureID,
@@ -62,7 +70,7 @@ public class ComparaisonManagerInGame : MonoBehaviour
             selectedInfo.infoNumber
         );
 
-        Debug.Log($"Compatibility = {result}");
+        Debug.Log("RESULT FROM DATABASE = " + result);
 
         DrawValidationLine(
             selectedPerson.transform.position,
@@ -80,14 +88,25 @@ public class ComparaisonManagerInGame : MonoBehaviour
         if (validationLine == null) return;
 
         validationLine.gameObject.SetActive(true);
-        validationLine.positionCount = 2;
-        validationLine.SetPosition(0, start);
-        validationLine.SetPosition(1, end);
+        validationLine.positionCount = 3;
 
-        // Choix de couleur
+        Vector3 mid = new Vector3(end.x, start.y, start.z);
+
+        
+        Vector3 p0 = Camera.main.ScreenToWorldPoint(start);
+        p0.z = 0;
+        validationLine.SetPosition(0, p0);
+        
+        Vector3 p1 = Camera.main.ScreenToWorldPoint(mid);
+        p1.z = 0;
+        validationLine.SetPosition(1, p1);
+
+        Vector3 p2 = Camera.main.ScreenToWorldPoint(end);
+        p2.z = 0;
+        validationLine.SetPosition(2, p2);
+
         Color color = Color.white;
         if (result == Compatibility.Compatible) color = Color.green;
-        else if (result == Compatibility.PartiallyCompatible) color = new Color(1f, 0.64f, 0f); // orange
         else if (result == Compatibility.Incompatible) color = Color.red;
 
         validationLine.startColor = color;
