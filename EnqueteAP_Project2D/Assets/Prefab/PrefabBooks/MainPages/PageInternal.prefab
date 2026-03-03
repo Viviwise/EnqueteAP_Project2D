@@ -573,8 +573,8 @@ MonoBehaviour:
   canvasGroup: {fileID: 264723742066187945}
   soundUsed: {fileID: 0}
   soundExit: {fileID: 0}
-  image01: {fileID: 5801917891765835599}
-  image02: {fileID: 7861706515355013141}
+  image01: {fileID: 798943072070608879}
+  image02: {fileID: 9089919076019902328}
 --- !u!1 &2928500314206089271
 GameObject:
   m_ObjectHideFlags: 0
