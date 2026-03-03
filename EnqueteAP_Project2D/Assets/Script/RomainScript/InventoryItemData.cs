@@ -1,5 +1,3 @@
-using System;
-using JetBrains.Annotations;
 using Script.RomainScript.Books;
 using UnityEngine;
 
