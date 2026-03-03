@@ -1,4 +1,6 @@
 using Script.Comparaison;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InfoBook : MonoBehaviour, IPointerClickHandler
 {
