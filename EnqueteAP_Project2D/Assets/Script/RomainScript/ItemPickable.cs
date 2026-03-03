@@ -1,17 +1,21 @@
-using System.Drawing;
-using TMPro.SpriteAssetUtilities;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+using Script.RomainScript.Books;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 using Color = UnityEngine.Color;
+using Image = UnityEngine.UI.Image;
 
 
 public class ItemPickable : MonoBehaviour
 {
     public InventoryItemData itemData;
-    public GameObject bookSlot;
+    private GameObject bookSlot;
+    private BookUIManager bookUIManager;
+
+    
+    [SerializeField] private Color originalColor;
+    [SerializeField] private Color Color =  Color.orange;
+    private Image image;
+    
     
         //=============ADDED FOR DRAG & DROP Pick================//
     private Vector3 startPosition;
@@ -23,20 +27,32 @@ public class ItemPickable : MonoBehaviour
         cam = Camera.main;
         startPosition = transform.position;
 
+        bookSlot = GameObject.FindWithTag("BookSlot");
+        image = bookSlot.GetComponent<Image>();
+        originalColor = image.color;
+
+        bookUIManager = FindFirstObjectByType<BookUIManager>();
+
     }
 
     private void OnMouseDown()
     {
-        if (isDragging = true)
-        {
-            bookSlot.transform.localScale = new Vector3(1.3f, 1.3f , 0);
-        }
+        if (bookUIManager != null && bookUIManager.IsBookOpen)
+            return;
         
+        isDragging = true;
+        
+        bookSlot.transform.localScale = new Vector3(1.3f, 1.3f , 0);
+        image.color = Color;
     }
 
     private void OnMouseDrag()
     {
-        if (!isDragging) return;
+        if (!isDragging)
+            return;
+
+        if (bookUIManager != null && bookUIManager.IsBookOpen)
+            return;
 
         Vector3 mouseWorld = cam.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;
@@ -46,7 +62,10 @@ public class ItemPickable : MonoBehaviour
     private void OnMouseUp()
     {
         isDragging = false;
+        
         bookSlot.transform.localScale = new Vector3(1, 1, 0);
+        image.color = originalColor;
+        
 
         // Vérife
         PointerEventData pointerData = new PointerEventData(EventSystem.current);
@@ -66,8 +85,6 @@ public class ItemPickable : MonoBehaviour
                 return;
             }
         }
-
-        // Si non slot -> position initiale
-        transform.position = startPosition;
     }
+    
 }

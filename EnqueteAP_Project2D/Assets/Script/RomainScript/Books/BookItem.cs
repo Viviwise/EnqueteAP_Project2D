@@ -1,13 +1,11 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using Object = UnityEngine.Object;
 
 namespace Script.RomainScript.Books
 {
     [RequireComponent(typeof(ItemPickable))]
-    public class BookItem : MonoBehaviour//, IPointerClickHandler
+    public class BookItem : MonoBehaviour //, IPointerClickHandler
     {
         public BookType BookType => pickable.itemData.bookType;
         
