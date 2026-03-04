@@ -1,5 +1,8 @@
 using Script.Comparaison;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ComparaisonManagerInGame : MonoBehaviour
 {
@@ -9,12 +12,18 @@ public class ComparaisonManagerInGame : MonoBehaviour
 
     private InfoCadaver selectedPerson;
     private InfoBook selectedInfo;
-    
-    public LineRenderer validationLine;
-    
+
+  
+    public RectTransform canvasRect;
+    public RectTransform linePrefab;
+    private RectTransform currentLine;
+    private List<RectTransform> segments = new List<RectTransform>();
+
+
+
     private InfoCadaver previouslySelectedPerson;
     private InfoBook previouslySelectedInfo;
-
+    
 
     private void Awake()
     {
@@ -25,7 +34,7 @@ public class ComparaisonManagerInGame : MonoBehaviour
     public void SelectPerson(InfoCadaver person)
     {
         selectedPerson = person;
-            Debug.Log("Person selected: " + person.blessureID);
+        Debug.Log("Person selected: " + person.blessureID);
         TryCheckCompatibility();
     }
 
@@ -52,17 +61,11 @@ public class ComparaisonManagerInGame : MonoBehaviour
             return;
         }
 
-        Debug.Log("Person = " + selectedPerson.blessureID);
-        Debug.Log("Category = " + selectedInfo.category);
-        Debug.Log("InfoNumber = " + selectedInfo.infoNumber);
-
         if (database == null)
         {
             Debug.LogError("DATABASE IS NULL");
             return;
         }
-
-        Debug.Log("Database entries count = " + database.entries.Count);
 
         var result = database.GetCompatibility(
             selectedPerson.blessureID,
@@ -72,46 +75,89 @@ public class ComparaisonManagerInGame : MonoBehaviour
 
         Debug.Log("RESULT FROM DATABASE = " + result);
 
-        DrawValidationLine(
-            selectedPerson.transform.position,
-            selectedInfo.transform.position,
+        DrawValidationLineUI(
+            selectedPerson.GetComponent<RectTransform>(),
+            selectedInfo.GetComponent<RectTransform>(),
             result
         );
 
         previouslySelectedPerson = selectedPerson;
         previouslySelectedInfo = selectedInfo;
-        
     }
 
-    
-    private void DrawValidationLine(Vector3 start, Vector3 end, Compatibility result)
+    private void DrawValidationLineUI(RectTransform startRect, RectTransform endRect, Compatibility result)
     {
-        if (validationLine == null) return;
+        if (linePrefab == null || canvasRect == null)
+        {
+            Debug.LogError("linePrefab or canvasRect is NULL");
+            return;
+        }
 
-        validationLine.gameObject.SetActive(true);
-        validationLine.positionCount = 3;
+        foreach (var seg in segments)
+            Destroy(seg.gameObject);
+        segments.Clear();
 
-        Vector3 mid = new Vector3(end.x, start.y, start.z);
+        Vector2 screenStart = startRect.position;
+        Vector2 screenEnd = endRect.position;
 
-        
-        Vector3 p0 = Camera.main.ScreenToWorldPoint(start);
-        p0.z = 0;
-        validationLine.SetPosition(0, p0);
-        
-        Vector3 p1 = Camera.main.ScreenToWorldPoint(mid);
-        p1.z = 0;
-        validationLine.SetPosition(1, p1);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenStart, null, out Vector2 localStart);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenEnd, null, out Vector2 localEnd);
 
-        Vector3 p2 = Camera.main.ScreenToWorldPoint(end);
-        p2.z = 0;
-        validationLine.SetPosition(2, p2);
+        Vector2 midHorizontal = new Vector2(localEnd.x, localStart.y);
 
-        Color color = Color.white;
-        if (result == Compatibility.Compatible) color = Color.green;
-        else if (result == Compatibility.Incompatible) color = Color.red;
+        CreateSegment(localStart, midHorizontal, result);
 
-        validationLine.startColor = color;
-        validationLine.endColor = color;
+        CreateSegment(midHorizontal, new Vector2(midHorizontal.x, localEnd.y), result);
+
+        CreateSegment(new Vector2(midHorizontal.x, localEnd.y), localEnd, result);
+    }
+
+    private void CreateSegment(Vector2 p1, Vector2 p2, Compatibility result)
+    {
+        RectTransform segment = Instantiate(linePrefab, canvasRect);
+        segment.gameObject.SetActive(true);
+
+        Vector2 dir = p2 - p1;
+        float dist = dir.magnitude;
+
+        segment.sizeDelta = new Vector2(dist, 4f);
+        segment.anchoredPosition = p1 + dir * 0.5f;
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        segment.rotation = Quaternion.Euler(0, 0, angle);
+
+        var image = segment.GetComponent<Image>();
+        if (image != null)
+        {
+            if (result == Compatibility.Compatible) image.color = Color.green;
+            else if (result == Compatibility.Incompatible) image.color = Color.red;
+            else image.color = Color.white;
+        }
+
+        segments.Add(segment);
+    }
+
+    private bool IsClickOnSelectable()
+    {
+        if (EventSystem.current == null)
+            return false;
+
+        PointerEventData pointerData = new PointerEventData(EventSystem.current);
+        pointerData.position = Input.mousePosition;
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+
+        foreach (var result in results)
+        {
+            if (result.gameObject.GetComponent<InfoBook>() != null)
+                return true;
+
+            if (result.gameObject.GetComponent<InfoCadaver>() != null)
+                return true;
+        }
+
+        return false;
     }
 
     void Update()
@@ -124,16 +170,7 @@ public class ComparaisonManagerInGame : MonoBehaviour
             DeselectAll();
         }
     }
-    private bool IsClickOnSelectable()
-    {
-        if (UnityEngine.EventSystems.EventSystem.current == null)
-            return false;
 
-        if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-            return true;
-
-        return false;
-    }
     private void DeselectAll()
     {
         selectedPerson = null;
@@ -143,11 +180,18 @@ public class ComparaisonManagerInGame : MonoBehaviour
 
         HideValidationLine();
     }
+
     private void HideValidationLine()
     {
-        if (validationLine != null)
-            validationLine.gameObject.SetActive(false);
-    }
-    
+        foreach (var seg in segments)
+        {
+            if (seg != null)
+                Destroy(seg.gameObject);
+        }
 
+        segments.Clear();
+
+        if (currentLine != null)
+            currentLine.gameObject.SetActive(false);
+    }
 }

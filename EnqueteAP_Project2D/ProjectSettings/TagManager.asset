@@ -43,8 +43,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI
+  - name: VeryFront
     uniqueID: 770062109
+    locked: 0
+  - name: Front
+    uniqueID: 2299684673
+    locked: 0
+  - name: Back
+    uniqueID: 2536140751
+    locked: 0
+  - name: VeryBack
+    uniqueID: 986050087
     locked: 0
   m_RenderingLayers:
   - Default
