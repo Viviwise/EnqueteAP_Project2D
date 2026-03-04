@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Ecchymose
     sentences:
     - "Poche de sang situ\xE9e sur n'importe quelle partie de la peau. "
     - "En fonction du d\xE9lai, peut \xEAtre bleu/ violet jusqu\u2019\xE0 vert/ jaune.
@@ -1096,6 +1096,7 @@ GameObject:
   - component: {fileID: 2139292009388724112}
   - component: {fileID: 1886921332937808493}
   - component: {fileID: 4972120568572802795}
+  - component: {fileID: 1783742031483902513}
   m_Layer: 5
   m_Name: Info2
   m_TagString: Untagged
@@ -1218,6 +1219,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 2
+--- !u!114 &1783742031483902513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5368109478159291483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: "H\xE9matome"
+    sentences:
+    - 'Poche de sang se situant sur ou proches des articulations. '
+    - "En fonction du d\xE9lai, peut \xEAtre bleu/ violet jusqu\u2019\xE0 vert/ jaune."
+    - "Produit douleurs et d\xE9mangeaisons lors de la cicatrisation. "
+    - "Peut \xEAtre caus\xE9 par un choc ou traumatisme. "
 --- !u!1 &5923416216350836681
 GameObject:
   m_ObjectHideFlags: 0
