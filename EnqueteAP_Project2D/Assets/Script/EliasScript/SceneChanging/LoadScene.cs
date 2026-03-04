@@ -8,9 +8,15 @@ namespace Script.EliasScript
         public void LoadToSceneSalleExam()
         {
             Debug.Log("button is clicked");
-            SceneManager.LoadScene("SceneSalleExam");
+            SceneManager.LoadScene(2);
         }
 
+        public void LoadToBrieffingScene()
+        {
+            Debug.Log("button is clicked");
+            SceneManager.LoadScene(1);
+        }
+        
         public void LoadToMenuScene()
         {
             Debug.Log("button is clicked");

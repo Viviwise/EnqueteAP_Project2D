@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 128742391316762832}
   - component: {fileID: 4090245208120903266}
   - component: {fileID: 6205829057039783067}
+  - component: {fileID: 3689980424180918705}
   m_Layer: 5
   m_Name: Info1
   m_TagString: Untagged
@@ -654,6 +655,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 1
+--- !u!114 &3689980424180918705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163687087384051602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: 
+    sentences:
+    - "Poche de sang situ\xE9e sur n'importe quelle partie de la peau. "
+    - "En fonction du d\xE9lai, peut \xEAtre bleu/ violet jusqu\u2019\xE0 vert/ jaune.
+      Produit douleurs et d\xE9mangeaisons lors de la cicatrisation. "
+    - "Peut \xEAtre caus\xE9 par un choc ou traumatisme.  "
 --- !u!1 &4724733976676808386
 GameObject:
   m_ObjectHideFlags: 0
