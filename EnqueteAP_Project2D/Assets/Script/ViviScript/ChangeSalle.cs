@@ -255,5 +255,6 @@ public class ChangeSalle : MonoBehaviour
         dropDownC1.gameObject.SetActive(true);
         dropDownC2.gameObject.SetActive(true);
         dropDownC3.gameObject.SetActive(true);
+        goToBureauButton.gameObject.SetActive(false);
     }
 }
