@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Script.EliasScript;
 using Script.EliasScript.SceneListeners;
@@ -11,48 +12,34 @@ public class JournalDeBord : MonoSaveListener
     //SaveJournalState pas changer !!!!!!
     private const string SaveJournalState = "JournalText"; // clé de sauvegarde + valeur
     
-    [SerializeField] private Button journalButton;     
     [SerializeField] private GameObject journalPanel;  
-    [SerializeField] private TMP_InputField noteInputField;  // <-- champ éditable
-
-    public static JournalDeBord Instance;
-
+    [SerializeField] private TMP_InputField noteInputField;
+    
     private bool journalOpen = false;
 
-    
-    //action dans le lancement du jeu 
     void Awake()
     {
-        if (Instance == null)
+        journalPanel.SetActive(false);
+        noteInputField.gameObject.SetActive(false);
+    }
+
+    public void ToggleJournal()
+    {
+        if (journalOpen)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            journalPanel.SetActive(false);
+            noteInputField.gameObject.SetActive(false);
         }
         else
         {
-            Destroy(gameObject);
-            return;
-        }
-        
-        // bouton
-        journalButton.onClick.AddListener(ToggleJournal);
-
-        journalPanel.SetActive(false);
-        noteInputField.gameObject.SetActive(false);
-        
-    }
-
-    //ouverture du journal
-    public void ToggleJournal()
-    {
-        journalOpen = !journalOpen;
-
-        journalPanel.SetActive(true);
-        noteInputField.gameObject.SetActive(true);
-
-        if (journalOpen)
+            journalPanel.SetActive(true);
+            noteInputField.gameObject.SetActive(true);
             noteInputField.ActivateInputField();
+        }
+
+        journalOpen = !journalOpen;
     }
+    
     
     //SAVE = écriture des données
     protected override void Write(List<ISavedProperty> properties)
