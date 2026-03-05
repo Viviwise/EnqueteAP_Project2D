@@ -462,7 +462,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Organe pr\xE9sentant une contraction excessive et r\xE9p\xE9t\xE9e."
+    - "Les cavit\xE9s sont souvent dilat\xE9es et les parois peuvent \xEAtre \xE9paisses."
+    - "Aspect congestionn\xE9, avec accumulation de sang dans les vaisseaux coronaires."
+    - "Souvent li\xE9 \xE0 une consommation de substances stimulantes, un stress
+      intense ou une intoxication."
 --- !u!1 &1910055461670191710
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +558,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910055461670191710}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -725,7 +730,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Organes souples, l\xE9gers et bien ros\xE9s."
+    - "Surface lisse et homog\xE8ne, sans taches ni zones rigides."
+    - "Bonne \xE9lasticit\xE9 lors de la manipulation."
+    - "Absence de liquide, de mucus ou de d\xE9p\xF4ts anormaux."
 --- !u!1 &2945952542152735292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,7 +1157,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Organe ferme, bien form\xE9 et sym\xE9trique."
+    - "De couleur rouge fonc\xE9 homog\xE8ne, sans zones p\xE2les ni taches sombres."
+    - "Les parois sont \xE9paisses et r\xE9guli\xE8res, les cavit\xE9s bien d\xE9finies."
+    - "Absence de l\xE9sions, de d\xE9p\xF4ts ou de caillots."
+    - "Montre une bonne oxyg\xE9nation et une activit\xE9 cardiaque normale."
 --- !u!1 &5037997938767923562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1313,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Organe pr\xE9sentant des zones sombres ou violac\xE9es, parfois fibreuses."
+    - "Parois irr\xE9guli\xE8res, amincies ou \xE9paissies de mani\xE8re anormale."
+    - "Pr\xE9sence possible de l\xE9sions internes, caillots ou n\xE9croses partielles."
+    - "Peut \xEAtre caus\xE9 par une maladie cardiaque, une intoxication, un traumatisme
+      ou une surcharge prolong\xE9e."
 --- !u!1 &5324680107913103529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,7 +1469,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Organes lourds, rigides ou partiellement affaiss\xE9s."
+    - "Coloration anormale : gris\xE2tre, violac\xE9e ou noircie."
+    - "Pr\xE9sence possible de liquide, de mucus \xE9pais ou de d\xE9p\xF4ts toxiques."
+    - "Peut \xEAtre caus\xE9 par une inhalation de substances, une infection ou une
+      intoxication chimique."
 --- !u!1 &5611568643423185987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,7 +1833,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Tissus fermes, \xE9lastiques et bien irrigu\xE9s."
+    - "Couleur rouge vif homog\xE8ne."
+    - "Absence de l\xE9sions, de d\xE9chirures ou de rigidit\xE9 excessive."
+    - "Bonne capacit\xE9 de contraction et de rel\xE2chement."
 --- !u!1 &7377393489704466553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,7 +1988,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Organes gonfl\xE9s, rouge\xE2tres et sensibles au toucher."
+    - "Surface parfois irr\xE9guli\xE8re avec pr\xE9sence de zones inflammatoires."
+    - "Peut s\u2019accompagner d\u2019une accumulation anormale de liquide."
+    - "Souvent caus\xE9 par une intoxication, une infection ou une surcharge toxique."
 --- !u!1 &7861706515355013141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,7 +2218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Pr\xE9sence d\u2019une masse anormale dure au sein de l\u2019organe."
+    - "D\xE9formation visible du rein, avec zones noires ou gris\xE2tres."
+    - "Tissus internes alt\xE9r\xE9s et vascularisation d\xE9sorganis\xE9e."
+    - "Peut provoquer des h\xE9morragies internes et une d\xE9faillance progressive
+      de l\u2019organe."
 --- !u!1 &8968404591164445949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,7 +2374,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Tissus rigides et contract\xE9s de mani\xE8re permanente."
+    - "Aspect tendu, parfois violac\xE9 ou p\xE2le."
+    - "Pr\xE9sence possible de micro-d\xE9chirures et de zones inflammatoires."
+    - "Souvent li\xE9 \xE0 une intoxication, une d\xE9shydratation s\xE9v\xE8re,
+      un choc nerveux ou une overdose."
 --- !u!1 &9089919076019902328
 GameObject:
   m_ObjectHideFlags: 0

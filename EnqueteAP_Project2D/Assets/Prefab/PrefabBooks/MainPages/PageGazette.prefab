@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8559989919908639149}
   - component: {fileID: 857666955480344796}
   - component: {fileID: 2251085119513045137}
+  - component: {fileID: 2978239984188488928}
   m_Layer: 5
   m_Name: Info1
   m_TagString: Untagged
@@ -151,6 +152,32 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences: []
+--- !u!114 &2978239984188488928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238678194328155468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Gazette - La couronne
+    sentences:
+    - "Par d\xE9cret royal, le gouvernement d\u2019Angleterus a annonc\xE9 hier un
+      durcissement imm\xE9diat des lois encadrant l\u2019importation de produits
+      venus de l\u2019\xE9tranger."
+    - "Face \xE0 la mont\xE9e des incidents li\xE9s \xE0 certaines marchandises non
+      r\xE9pertori\xE9es, la Couronne affirme vouloir \xAB prot\xE9ger l\u2019ordre
+      public et la stabilit\xE9 de Londris \xBB."
+    - "Des inspecteurs sp\xE9ciaux ont \xE9t\xE9 d\xE9ploy\xE9s dans les ports, les
+      gares et les entrep\xF4ts de la capitale. Toute cargaison jug\xE9e suspecte
+      sera saisie et analys\xE9e."
+    - "Officiellement, le gouvernement nie tout lien entre ces mesures et les r\xE9cents
+      d\xE9c\xE8s inexpliqu\xE9s survenus dans les quartiers Est et industriels."
 --- !u!1 &1442865019431165176
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +328,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Trois commer\xE7ants ont \xE9t\xE9 retrouv\xE9s morts ces derni\xE8res semaines,
+      officiellement victimes \xAB d\u2019arr\xEAts cardiaques foudroyants \xBB."
+    - "Aucun signe de violence n\u2019a \xE9t\xE9 relev\xE9."
+    - "Selon plusieurs t\xE9moignages, les d\xE9funts auraient r\xE9cemment refus\xE9
+      de coop\xE9rer avec un r\xE9seau contr\xF4lant la distribution d\u2019une substance
+      locale tr\xE8s r\xE9pandue dans les arri\xE8re-salles et les docks."
+    - "Les autorit\xE9s rappellent que les maladies cardiaques restent fr\xE9quentes
+      et nient tout lien criminel."
+    - "Officieusement, certains habitants parlent d\u2019un avertissement silencieux."
 --- !u!1 &1962420645841535438
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +488,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Les nuits de Londris deviennent chaque semaine plus mouvement\xE9es suite
+      \xE0 l'arriv\xE9e de nouveaux produits venant de l\u2019Est. "
+    - "Une boisson encore inconnue circule d\xE9sormais dans les tavernes, les clubs
+      priv\xE9s et certains salons clandestins des rives."
+    - "D\xE9crite comme douce, sucr\xE9e et l\xE9g\xE8rement \xE9pic\xE9e, elle est
+      consomm\xE9e en grande quantit\xE9 par une jeunesse en qu\xEAte de sensations
+      nouvelles."
+    - "Mais plusieurs m\xE9decins alertent d\xE9j\xE0 sur ses effets secondaires
+      : vomissements violents, douleurs thoraciques, troubles de la vision et malaise
+      cardiaque."
+    - "Son succ\xE8s s\u2019explique notamment par son prix d\xE9risoire et sa distribution
+      discr\xE8te dans les arri\xE8re-salles."
+    - "Les autorit\xE9s affirment surveiller de pr\xE8s ce nouveau ph\xE9nom\xE8ne
+      nocturne qui ne cesse de prendre de l\u2019ampleur."
 --- !u!1 &2485020979683793601
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +844,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "Les docks de Blackriver ont accueilli cette semaine une cargaison exceptionnelle
+      : une nouvelle vari\xE9t\xE9 de th\xE9 en provenance des territoires orientaux
+      de l\u2019Ouest, pr\xE9sent\xE9 comme doux, l\xE9ger et dot\xE9 d\u2019un parfum
+      floral in\xE9dit."
+    - "D\xE9j\xE0 tr\xE8s pris\xE9 dans les salons de th\xE9 et chez les notables,
+      ce breuvage est d\xE9crit comme apaisant et revigorant."
+    - "Certains herboristes vantent m\xEAme ses vertus m\xE9dicinales suppos\xE9es."
+    - "Cependant, plusieurs sp\xE9cialistes appellent \xE0 la prudence."
+    - "Certaines herbes utilis\xE9es dans sa composition seraient encore mal connues
+      en Angleterus, et leur pr\xE9paration n\xE9cessiterait un savoir pr\xE9cis
+      afin d\u2019\xE9viter toute r\xE9action toxique."
+    - "Le minist\xE8re du Commerce assure que des contr\xF4les sont en cours afin
+      de garantir la s\xE9curit\xE9 des consommateurs."
 --- !u!1 &7465296139626147131
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +1008,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
     name: 
-    sentences: []
+    sentences:
+    - "La municipalit\xE9 a inaugur\xE9 cette semaine la premi\xE8re Acad\xE9mie
+      Internationale de Northbridge, destin\xE9e \xE0 accueillir les nombreux enfants
+      de familles venues s\u2019installer r\xE9cemment \xE0 Londris."
+    - "L\u2019arriv\xE9e massive de travailleurs \xE9trangers dans les secteurs industriels
+      et portuaires a entra\xEEn\xE9 une forte hausse d\xE9mographique."
+    - "Les \xE9tablissements existants ne suffisaient plus \xE0 absorber cette nouvelle
+      population."
+    - "La ville pr\xE9voit d\xE9j\xE0 la construction de deux autres \xE9coles d\u2019ici
+      l\u2019ann\xE9e prochaine afin d\u2019\xE9viter la saturation des quartiers
+      Est."
 --- !u!1 &8612827291508550829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1251,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8926278087647509563}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
