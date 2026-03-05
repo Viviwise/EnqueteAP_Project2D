@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4774408627491004028}
   - component: {fileID: 7221367323028829690}
   - component: {fileID: 3707977926217240811}
+  - component: {fileID: 6599931140848577471}
   m_Layer: 5
   m_Name: Info9
   m_TagString: Untagged
@@ -135,6 +136,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 9
+--- !u!114 &6599931140848577471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617987251322486113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: 
+    sentences:
+    - "Ces traces ci sont plus localis\xE9es sur les zones du corps avec une couche
+      de peau fine."
+    - "Les overdoses sont r\xE9currentes, laissant les traces des produits consomm\xE9es
+      dans les vaisseaux sanguins. "
 --- !u!1 &1999727588889177457
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +168,7 @@ GameObject:
   - component: {fileID: 3481261360452289934}
   - component: {fileID: 131855714528620906}
   - component: {fileID: 6832728184561437066}
+  - component: {fileID: 6672231572669138466}
   m_Layer: 5
   m_Name: Info4
   m_TagString: Untagged
@@ -270,6 +291,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 4
+--- !u!114 &6672231572669138466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999727588889177457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: 
+    sentences:
+    - "Traces d\u2019un liquide de couleur jaun\xE2tre s\u2019\xE9chappant de la
+      bouche."
+    - "Caus\xE9 par une maladie, consommation importante d\u2019alcool ou intoxication
+      alimentaire."
 --- !u!1 &2057512837359390230
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +866,7 @@ GameObject:
   - component: {fileID: 7875051321177753253}
   - component: {fileID: 5991748735902101418}
   - component: {fileID: 8327480157682932590}
+  - component: {fileID: 7778964903062811082}
   m_Layer: 5
   m_Name: Info5
   m_TagString: Untagged
@@ -948,6 +989,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 5
+--- !u!114 &7778964903062811082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134325429116158010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: 
+    sentences:
+    - "Les zones du corps qui prennent la couleur violette sont la cons\xE9quence
+      de plusieurs probl\xE8mes graves : d\xE9tresse respiratoire voir insuffisance
+      cardiaque ou bien d\xE9compensation cardiaque."
 --- !u!1 &5196094625557917500
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +1020,7 @@ GameObject:
   - component: {fileID: 6888067924386512698}
   - component: {fileID: 8797914251602702069}
   - component: {fileID: 7260089744178648743}
+  - component: {fileID: 4705359823644043829}
   m_Layer: 5
   m_Name: Info3
   m_TagString: Untagged
@@ -1083,6 +1143,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 3
+--- !u!114 &4705359823644043829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196094625557917500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: 
+    sentences:
+    - "Traces blanches mousseuses au niveau de la bouche, caus\xE9es par une allergie
+      ou un reflux gastrique. "
 --- !u!1 &5368109478159291483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1787,7 @@ GameObject:
   - component: {fileID: 557284744393526618}
   - component: {fileID: 1664164183992976494}
   - component: {fileID: 4848959832853449384}
+  - component: {fileID: 5156603286572436105}
   m_Layer: 5
   m_Name: Info7
   m_TagString: Untagged
@@ -1832,6 +1910,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 7
+--- !u!114 &5156603286572436105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7689356139190868881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: 
+    sentences:
+    - "Ceci peut \xEAtre d\xFB \xE0 un traumatisme : blessure aux phalanges, actes
+      violents."
+    - "Cela peut aussi provenir d\u2019une intoxication. "
+    - "Cela peut se pr\xE9senter sous la forme de simples t\xE2ches sous l\u2019ongle
+      voire sur la totalit\xE9 de l\u2019ongle. "
 --- !u!1 &8015141305352398449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,6 +2115,7 @@ GameObject:
   - component: {fileID: 998640787070878097}
   - component: {fileID: 8863639901027197940}
   - component: {fileID: 1704979872751929924}
+  - component: {fileID: 6707677567176536466}
   m_Layer: 5
   m_Name: Info8
   m_TagString: Untagged
@@ -2139,6 +2238,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 8
+--- !u!114 &6707677567176536466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779388841671051833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: 
+    sentences:
+    - "Fr\xE9quentes et en g\xE9n\xE9ral pr\xE9sentes sur l\u2019ensemble du corps,
+      les piq\xFBres forment de petits points rouges."
+    - "La grosseur d\xE9pend de l\u2019insecte responsable de la piq\xFBre. "
 --- !u!1 &9092928220719214110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2269,7 @@ GameObject:
   - component: {fileID: 3781873172081784599}
   - component: {fileID: 2097693158752630120}
   - component: {fileID: 7748178661264392787}
+  - component: {fileID: 8463369445176542966}
   m_Layer: 5
   m_Name: Info6
   m_TagString: Untagged
@@ -2274,3 +2392,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 1
   infoNumber: 6
+--- !u!114 &8463369445176542966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9092928220719214110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: 
+    sentences:
+    - "Les zones du corps qui prennent la couleur bleue sont la cons\xE9quence d\u2019une
+      maladie : la cyanose."
+    - "Elle provoque un manque d\u2019oxyg\xE8ne dans le sang, ce qui entra\xEEne
+      la d\xE9faillance du c\u0153ur et des poumons."
+    - "Cela peut aussi venir d\u2019une hypothermie due \xE0 un contact dans un environnement
+      froid pendant trop longtemps."
