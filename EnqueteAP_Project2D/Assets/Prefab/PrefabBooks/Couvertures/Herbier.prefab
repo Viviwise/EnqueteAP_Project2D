@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1046739642317789193}
   - component: {fileID: 807144967697716195}
   - component: {fileID: 9180699676887419844}
-  - component: {fileID: 317074207916706440}
   m_Layer: 0
   m_Name: Herbier
   m_TagString: Book
@@ -108,7 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::itemPickable
   itemData: {fileID: 11400000, guid: d0513855806a7804e856cc1576f63391, type: 2}
-  bookSlot: {fileID: 3089387123222089242, guid: db23ac0e80a1d0942964005b563558dd, type: 3}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  Color: {r: 1, g: 0.6470588, b: 0, a: 1}
 --- !u!114 &1046739642317789193
 MonoBehaviour:
   m_ObjectHideFlags: 0
