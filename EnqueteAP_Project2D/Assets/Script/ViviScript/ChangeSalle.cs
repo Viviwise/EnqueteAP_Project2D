@@ -27,6 +27,7 @@ public class ChangeSalle : MonoBehaviour
     public TMP_Dropdown dropDownC1;
     public TMP_Dropdown dropDownC2;
     public TMP_Dropdown dropDownC3;
+    public Button finishReportFinalButton;
 
     public Button goToSalleExamButton;
     public Button goToBureauButton;
@@ -70,6 +71,7 @@ public class ChangeSalle : MonoBehaviour
         dropDownC1.gameObject.SetActive(false);
         dropDownC2.gameObject.SetActive(false);
         dropDownC3.gameObject.SetActive(false);
+        finishReportFinalButton.gameObject.SetActive(false);
         
         goToReportC1Button.gameObject.SetActive(false);
         goToReportC2Button.gameObject.SetActive(false);
@@ -113,6 +115,7 @@ public class ChangeSalle : MonoBehaviour
         goToBureauButton.gameObject.SetActive(false);
         goToSalleExamButton.gameObject.SetActive(true);
         goToReportSpaceButton.gameObject.SetActive(false);
+        
     }
     public void GoToExaminationC2()
     {
@@ -151,6 +154,9 @@ public class ChangeSalle : MonoBehaviour
         goToReportC1Button.gameObject.SetActive(false);
         goToReportC2Button.gameObject.SetActive(false);
         goToReportC3Button.gameObject.SetActive(false);
+        
+        finishReportFinalButton.gameObject.SetActive(false);
+
     }
 
     
@@ -172,6 +178,8 @@ public class ChangeSalle : MonoBehaviour
         goToTableBureauButton.gameObject.SetActive(false);
         
         goToReportSpaceButton.gameObject.SetActive(false);
+        finishReportFinalButton.gameObject.SetActive(false);
+
     }
     
 
@@ -193,6 +201,9 @@ public class ChangeSalle : MonoBehaviour
         goToTableBureauButton.gameObject.SetActive(false);
         goToReportSpaceButton.gameObject.SetActive(true);
         goToReportFinalButton.gameObject.SetActive(false);
+        
+        finishReportFinalButton.gameObject.SetActive(false);
+
     }
 
     public void GoToBureau()
@@ -216,6 +227,8 @@ public class ChangeSalle : MonoBehaviour
         dropDownC1.gameObject.SetActive(false);
         dropDownC2.gameObject.SetActive(false);
         dropDownC3.gameObject.SetActive(false);
+        finishReportFinalButton.gameObject.SetActive(false);
+
     }
 
     public void GoToTableBureau()
@@ -242,6 +255,8 @@ public class ChangeSalle : MonoBehaviour
         dropDownC1.gameObject.SetActive(false);
         dropDownC2.gameObject.SetActive(false);
         dropDownC3.gameObject.SetActive(false);
+        finishReportFinalButton.gameObject.SetActive(false);
+
     }
 
     public void GoToReportFinal()
@@ -255,6 +270,9 @@ public class ChangeSalle : MonoBehaviour
         dropDownC1.gameObject.SetActive(true);
         dropDownC2.gameObject.SetActive(true);
         dropDownC3.gameObject.SetActive(true);
+        finishReportFinalButton.gameObject.SetActive(true);
+
+        
         goToBureauButton.gameObject.SetActive(false);
     }
 }
