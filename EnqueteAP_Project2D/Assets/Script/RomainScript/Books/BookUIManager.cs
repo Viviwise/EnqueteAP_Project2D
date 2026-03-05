@@ -8,6 +8,10 @@ namespace Script.RomainScript.Books
         [SerializeField] private BookUI[] booksUI;
         [SerializeField] private InventoryManager inventoryManager;
         [SerializeField] private Button buttonReportEnd;
+        [SerializeField] private Button bureau;
+        [SerializeField] private Button salleExam;
+        [SerializeField] private Button deskTop;
+        
 
         private BookUI currentOpenBook;
 
@@ -53,6 +57,12 @@ namespace Script.RomainScript.Books
 
             if (buttonReportEnd != null)
                 buttonReportEnd.interactable = false;
+            if (bureau != null)
+                bureau.interactable = false;
+            if (salleExam != null)
+                salleExam.interactable = false;
+            if  (deskTop != null)
+                deskTop.interactable = false;
         }
 
         private void UnlockGameplay()
@@ -66,6 +76,12 @@ namespace Script.RomainScript.Books
 
             if (buttonReportEnd != null)
                 buttonReportEnd.interactable = true;
+            if (bureau != null)
+                bureau.interactable = true;
+            if (salleExam != null)
+                salleExam.interactable = true;
+            if  (deskTop != null)
+                deskTop.interactable = true;
         }
     }
 }
