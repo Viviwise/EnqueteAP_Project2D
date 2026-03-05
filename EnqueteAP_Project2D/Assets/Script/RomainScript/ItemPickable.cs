@@ -10,7 +10,6 @@ public class ItemPickable : MonoBehaviour
     public InventoryItemData itemData;
     private GameObject bookSlot;
     private BookUIManager bookUIManager;
-
     
     [SerializeField] private Color originalColor;
     [SerializeField] private Color Color =  Color.orange;
