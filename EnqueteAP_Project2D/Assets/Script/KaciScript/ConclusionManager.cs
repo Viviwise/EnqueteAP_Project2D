@@ -11,17 +11,17 @@ namespace Script.KaciScript
         [SerializeField] private TMP_Dropdown dropdownPopov;
         [SerializeField] private TMP_Dropdown dropdownJavier;
         
-        [SerializeField] private int reponsePichard;
-        [SerializeField] private int reponseRouflet;
-        [SerializeField] private int reponseJames;
+        [SerializeField] private int reponseWidmer;
+        [SerializeField] private int reponsePopov;
+        [SerializeField] private int reponseJavier;
         [SerializeField] private  LoadScene loadSceneScript;
         public void ValidateConclusion()
         {
             int score = 0;
             
-            if (dropdownWidmer.value == reponsePichard) score++;
-            if (dropdownPopov.value == reponseRouflet) score++;
-            if (dropdownJavier.value == reponseJames) score++;
+            if (dropdownWidmer.value == reponseWidmer) score++;
+            if (dropdownPopov.value == reponsePopov) score++;
+            if (dropdownJavier.value == reponseJavier) score++;
             
             
             Debug.Log("Score : " + score + "/3");
