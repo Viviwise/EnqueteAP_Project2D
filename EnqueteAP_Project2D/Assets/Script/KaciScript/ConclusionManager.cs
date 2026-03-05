@@ -14,14 +14,7 @@ namespace Script.KaciScript
         [SerializeField] private int reponsePichard;
         [SerializeField] private int reponseRouflet;
         [SerializeField] private int reponseJames;
-        [SerializeField] private  LoadScene loadScene;
-        
-        private void Awake()
-        {
-            loadScene = GetComponent<LoadScene>();
-        }
-
-
+        [SerializeField] private  LoadScene loadSceneScript;
         public void ValidateConclusion()
         {
             int score = 0;
@@ -35,10 +28,10 @@ namespace Script.KaciScript
             
             switch (score)
             {
-                case 0: SceneManager.LoadScene("BadEndScene"); break;
-                case 1: SceneManager.LoadScene("BadEndScene"); break;
-                case 2: SceneManager.LoadScene("BadEndScene"); break;
-                case 3: SceneManager.LoadScene("GoodEndScene"); break;
+                case 0: loadSceneScript.LoadToBadEndingScene(); break;
+                case 1: loadSceneScript.LoadToBadEndingScene(); break;
+                case 2: loadSceneScript.LoadToMediumEndingScene();break;
+                case 3: loadSceneScript.LoadToGoodEndingScene(); break;
             }
         }
     }
