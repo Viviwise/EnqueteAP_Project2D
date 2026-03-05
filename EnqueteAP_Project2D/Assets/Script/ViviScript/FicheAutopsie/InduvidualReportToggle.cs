@@ -7,7 +7,8 @@ public class InduvidualReportToggle : MonoBehaviour
     public GameObject reportPanel;
 
 
-    string[] organes = { "Foie", "Coeur", "Poumon", "Estomac", "Trachée", "Peau", "Rate", "Bouche" };
+    string[] organes = { "Lèvres","Bouche", "Peau", "Foie", "Coeur", "Poumons", "Estomac", "Reins" };
+
 
     void Start()
     {
