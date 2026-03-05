@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1484315448911651847}
   - component: {fileID: 8559989919908639149}
   - component: {fileID: 857666955480344796}
-  - component: {fileID: 2251085119513045137}
   - component: {fileID: 2978239984188488928}
   m_Layer: 5
   m_Name: Info1
@@ -137,21 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 3
   infoNumber: 1
---- !u!114 &2251085119513045137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238678194328155468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
-  dialogue:
-    name: 
-    sentences: []
 --- !u!114 &2978239984188488928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Gazette - Meurtres \xE0 l'Est"
     sentences:
     - "Trois commer\xE7ants ont \xE9t\xE9 retrouv\xE9s morts ces derni\xE8res semaines,
       officiellement victimes \xAB d\u2019arr\xEAts cardiaques foudroyants \xBB."
@@ -487,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Gazette - Soir\xE9es agit\xE9es "
     sentences:
     - "Les nuits de Londris deviennent chaque semaine plus mouvement\xE9es suite
       \xE0 l'arriv\xE9e de nouveaux produits venant de l\u2019Est. "
@@ -843,7 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Gazette - Arrivage d'un th\xE9 floral"
     sentences:
     - "Les docks de Blackriver ont accueilli cette semaine une cargaison exceptionnelle
       : une nouvelle vari\xE9t\xE9 de th\xE9 en provenance des territoires orientaux
@@ -1007,7 +991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Gazette - Ouverture d'une grande \xE9cole"
     sentences:
     - "La municipalit\xE9 a inaugur\xE9 cette semaine la premi\xE8re Acad\xE9mie
       Internationale de Northbridge, destin\xE9e \xE0 accueillir les nombreux enfants

@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure externe - piqures seringues
     sentences:
     - "Ces traces ci sont plus localis\xE9es sur les zones du corps avec une couche
       de peau fine."
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure externe - vomissement
     sentences:
     - "Traces d\u2019un liquide de couleur jaun\xE2tre s\u2019\xE9chappant de la
       bouche."
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: Ecchymose
+    name: Blessure externe - ecchymose
     sentences:
     - "Poche de sang situ\xE9e sur n'importe quelle partie de la peau. "
     - "En fonction du d\xE9lai, peut \xEAtre bleu/ violet jusqu\u2019\xE0 vert/ jaune.
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure externe - peau violette
     sentences:
     - "Les zones du corps qui prennent la couleur violette sont la cons\xE9quence
       de plusieurs probl\xE8mes graves : d\xE9tresse respiratoire voir insuffisance
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Blessure externe - \xE9touffement"
     sentences:
     - "Traces blanches mousseuses au niveau de la bouche, caus\xE9es par une allergie
       ou un reflux gastrique. "
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: "H\xE9matome"
+    name: "Blessure externe - h\xE9matome"
     sentences:
     - 'Poche de sang se situant sur ou proches des articulations. '
     - "En fonction du d\xE9lai, peut \xEAtre bleu/ violet jusqu\u2019\xE0 vert/ jaune."
@@ -1538,7 +1538,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7026072809785863268}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1923,7 +1923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure externe - ongles bleus
     sentences:
     - "Ceci peut \xEAtre d\xFB \xE0 un traumatisme : blessure aux phalanges, actes
       violents."
@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure externe - piqures insectes
     sentences:
     - "Fr\xE9quentes et en g\xE9n\xE9ral pr\xE9sentes sur l\u2019ensemble du corps,
       les piq\xFBres forment de petits points rouges."
@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure externe - peau bleue
     sentences:
     - "Les zones du corps qui prennent la couleur bleue sont la cons\xE9quence d\u2019une
       maladie : la cyanose."

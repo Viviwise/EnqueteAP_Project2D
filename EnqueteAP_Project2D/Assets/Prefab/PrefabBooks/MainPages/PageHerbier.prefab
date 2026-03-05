@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7639976635779701513}
   - component: {fileID: 2610430671885754830}
   - component: {fileID: 2925936565729369905}
+  - component: {fileID: 3711397726397249824}
   m_Layer: 5
   m_Name: Info3
   m_TagString: Untagged
@@ -135,6 +136,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 0
   infoNumber: 3
+--- !u!114 &3711397726397249824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61950019211306756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Herbier - Nerium oleander
+    sentences:
+    - 'Laurier-rose est un arbuste de la famille des Apocynaceae. Arbuste des pays
+      du Sud. '
+    - "Cette plante est utilis\xE9e comme ornement mais est tr\xE8s toxique dans
+      toutes ses parties. "
+    - En cas de consommation, provoque arythmies cardiaques, vomissements violents,
+      collapsus cardiovasculaire.
 --- !u!1 &550722581067360840
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +303,7 @@ GameObject:
   - component: {fileID: 1223265111682299968}
   - component: {fileID: 5439982767406681807}
   - component: {fileID: 7463482668212331183}
+  - component: {fileID: 7529847701074424672}
   m_Layer: 5
   m_Name: Info2
   m_TagString: Untagged
@@ -403,6 +426,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 0
   infoNumber: 2
+--- !u!114 &7529847701074424672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733188218907330286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Herbier - Atropa belladonna
+    sentences:
+    - "Belladone est une esp\xE8ce de plantes de la famille des Solanaceae. Plante
+      commune dans les pays chauds de bord de mer. "
+    - "Cette plante produit des baies noires brillantes historiquement utilis\xE9es
+      comme poison et cosm\xE9tique."
+    - "En cas de consommation, provoque hallucinations, dilatation extr\xEAme des
+      pupilles, tachycardie, confusion mentale."
 --- !u!1 &2115137829436881105
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +644,7 @@ GameObject:
   - component: {fileID: 6449824272054464137}
   - component: {fileID: 3731746060842385311}
   - component: {fileID: 361683515344734614}
+  - component: {fileID: 418317358835681362}
   m_Layer: 5
   m_Name: Info1
   m_TagString: Untagged
@@ -722,6 +767,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 0
   infoNumber: 1
+--- !u!114 &418317358835681362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368024620469532883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Herbier - Aconitum napellus
+    sentences:
+    - "Aconit napel est une esp\xE8ce de la famille des Ranunculaceae. Plante commune
+      et v\xE9n\xE9r\xE9e dans les pays avec des collines. "
+    - "Cette plante est fortement mortelle ! A ne consommer sous aucun pr\xE9texte
+      : elle contient l\u2019aconitine, l\u2019un des alcalo\xEFdes v\xE9g\xE9taux
+      les plus rapides et mortels connus."
+    - "En cas de consommation, provoque engourdissement imm\xE9diat, troubles cardiaques
+      s\xE9v\xE8res, paralysie respiratoire, mort possible en quelques heures car
+      elle emp\xEAche de vomir. "
 --- !u!1 &3242198543524304046
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +878,7 @@ GameObject:
   - component: {fileID: 3120003583539276056}
   - component: {fileID: 7372854768220150023}
   - component: {fileID: 1740477021647647440}
+  - component: {fileID: 2227366955758764451}
   m_Layer: 5
   m_Name: Info4
   m_TagString: Untagged
@@ -932,6 +1001,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 0
   infoNumber: 4
+--- !u!114 &2227366955758764451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358054109084228774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Herbier - Nelumbo nucifera
+    sentences:
+    - "Lotus sacr\xE9 est une fleur de la famille des Nelumbonaceae. Plante des pays
+      du Sud. "
+    - "Cette plante aquatique sacr\xE9e est consommable sous toutes ses formes."
 --- !u!1 &3555954989725861317
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +1032,7 @@ GameObject:
   - component: {fileID: 4363090539298642362}
   - component: {fileID: 6597278404456118801}
   - component: {fileID: 2277317852938098415}
+  - component: {fileID: 6877464597843934834}
   m_Layer: 5
   m_Name: Info7
   m_TagString: Untagged
@@ -1067,6 +1155,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 0
   infoNumber: 7
+--- !u!114 &6877464597843934834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555954989725861317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Herbier - Manihot esculenta
+    sentences:
+    - 'Manioc amer est une plante de la famille des Euphorbiaceae. Plante des pays
+      du Sud. '
+    - "Cette plante est un aliment de base dans ces pays mais mortel s\u2019il est
+      mal pr\xE9par\xE9."
+    - "En cas de consommation, provoque la lib\xE9ration excessive de cyanure, \xE9touffement
+      et convulsions."
 --- !u!1 &3559887816359223377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1328,7 @@ GameObject:
   - component: {fileID: 7011592893187518788}
   - component: {fileID: 6820648288654392089}
   - component: {fileID: 3079729132653004519}
+  - component: {fileID: 4917108290693407202}
   m_Layer: 5
   m_Name: Info5
   m_TagString: Untagged
@@ -1341,6 +1451,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 0
   infoNumber: 5
+--- !u!114 &4917108290693407202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4081796723260708014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Herbier - Ricinus communis
+    sentences:
+    - "Ricin est une esp\xE8ce de famille des Euphorbiaceae. Plante appr\xE9ci\xE9e
+      pour son odeur apaisante dans les pays du Sud."
+    - "Conserve cette odeur m\xEAme dans l\u2019eau chaude."
+    - "Cette plante poss\xE8de des graines contenant de la ricine, une toxine prot\xE9ique
+      redoutable."
+    - "En cas de consommation, provoque d\xE9faillance multi-organique, h\xE9morragies
+      par les muqueuses et arr\xEAt des organes vitaux."
+    - "Il semblerait que des chercheurs ont r\xE9cemment trouv\xE9 un antidote..."
 --- !u!1 &5329870374520679660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1487,7 @@ GameObject:
   - component: {fileID: 7247078715500803251}
   - component: {fileID: 3862718560558669868}
   - component: {fileID: 2815086435079224596}
+  - component: {fileID: 181556692468648139}
   m_Layer: 5
   m_Name: Info8
   m_TagString: Untagged
@@ -1476,6 +1610,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 0
   infoNumber: 8
+--- !u!114 &181556692468648139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5329870374520679660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Herbier - Aspalathus linearis
+    sentences:
+    - 'Rooibos est une plante de la famille des Fabaceae. Plante des pays du Sud. '
+    - "Cette plante est utilis\xE9e pour une infusion sans caf\xE9ine."
 --- !u!1 &6590466128677884472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,6 +2139,7 @@ GameObject:
   - component: {fileID: 8876192767290414764}
   - component: {fileID: 3526666998108374049}
   - component: {fileID: 3337462239393018333}
+  - component: {fileID: 8297484573977414800}
   m_Layer: 5
   m_Name: Info6
   m_TagString: Untagged
@@ -2110,3 +2262,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoBook
   category: 0
   infoNumber: 6
+--- !u!114 &8297484573977414800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073968551296805966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e8734b81c4a6cba8d6c23a45c3bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogue:
+    name: Herbier - Bowiea volubilis
+    sentences:
+    - "Bowiea volubis est une esp\xE8ce de plantes herbac\xE9es monocotyl\xE9dones."
+    - "Plante tr\xE8s commune et bon march\xE9 dans les pays de l\u2019Ouest. En
+      \xE9t\xE9, elle produit de petites fleurs blanches. "
+    - "Sa consommation doit \xEAtre contr\xF4l\xE9e par des professionnels de sant\xE9."
+    - "En cas de surconsommation, provoque des vomissements, troubles cardiovasculaires
+      voir arr\xEAt cardiaque. "

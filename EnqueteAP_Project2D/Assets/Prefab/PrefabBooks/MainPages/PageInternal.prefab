@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure interne - coeur tachycardie
     sentences:
     - "Organe pr\xE9sentant une contraction excessive et r\xE9p\xE9t\xE9e."
     - "Les cavit\xE9s sont souvent dilat\xE9es et les parois peuvent \xEAtre \xE9paisses."
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure interne - poumons sains
     sentences:
     - "Organes souples, l\xE9gers et bien ros\xE9s."
     - "Surface lisse et homog\xE8ne, sans taches ni zones rigides."
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure interne - coeur sain
     sentences:
     - "Organe ferme, bien form\xE9 et sym\xE9trique."
     - "De couleur rouge fonc\xE9 homog\xE8ne, sans zones p\xE2les ni taches sombres."
@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Blessure interne - coeur endommag\xE9"
     sentences:
     - "Organe pr\xE9sentant des zones sombres ou violac\xE9es, parfois fibreuses."
     - "Parois irr\xE9guli\xE8res, amincies ou \xE9paissies de mani\xE8re anormale."
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Blessure interne - poumons endommag\xE9s"
     sentences:
     - "Organes lourds, rigides ou partiellement affaiss\xE9s."
     - "Coloration anormale : gris\xE2tre, violac\xE9e ou noircie."
@@ -1832,7 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure interne - muscles sains
     sentences:
     - "Tissus fermes, \xE9lastiques et bien irrigu\xE9s."
     - "Couleur rouge vif homog\xE8ne."
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Blessure interne - reins irrit\xE9s"
     sentences:
     - "Organes gonfl\xE9s, rouge\xE2tres et sensibles au toucher."
     - "Surface parfois irr\xE9guli\xE8re avec pr\xE9sence de zones inflammatoires."
@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: Blessure interne - cancer du rein
     sentences:
     - "Pr\xE9sence d\u2019une masse anormale dure au sein de l\u2019organe."
     - "D\xE9formation visible du rein, avec zones noires ou gris\xE2tres."
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogue:
-    name: 
+    name: "Blessure interne - muscles crisp\xE9s"
     sentences:
     - "Tissus rigides et contract\xE9s de mani\xE8re permanente."
     - "Aspect tendu, parfois violac\xE9 ou p\xE2le."
