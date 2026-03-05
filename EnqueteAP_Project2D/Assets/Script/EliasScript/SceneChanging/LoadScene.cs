@@ -50,12 +50,12 @@ namespace Script.EliasScript
 
         public void LoadToBrieffingScene()
         {
-            StartCoroutine(FadeOutAndLoad("BriefingScene"));
+            StartCoroutine(FadeOutAndLoad("BrieffingGame"));
         }
         
         public void LoadToMenuScene()
         {
-            StartCoroutine(FadeOutAndLoad("MenuScene"));
+            StartCoroutine(FadeOutAndLoad("StartGame"));
         }
 
         public void LoadToGoodEndingScene()

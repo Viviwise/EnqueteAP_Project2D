@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay/StartGame.unity
     guid: 2fc888193251278479ff70869bd0fd11
   - enabled: 1
-    path: Assets/Scenes/ViviScene.unity
-    guid: e162d8d65b1c30d4994d61638db324ed
-  - enabled: 1
     path: Assets/Scenes/Gameplay/BrieffingGame.unity
     guid: c51963881cf1dd541912dbf0308c610c
   - enabled: 1
@@ -20,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending/BadEndScene.unity
     guid: 74c36a6ecb6659c408cc1e11e156af86
+  - enabled: 1
+    path: Assets/Scenes/Ending/MediumEndScene.unity
+    guid: 2be84b83a8b3dcd408abeface3f225fc
   - enabled: 1
     path: Assets/Scenes/Ending/GoodEndScene.unity
     guid: 7db3c0e78d1dbb64880eeb833281d876
