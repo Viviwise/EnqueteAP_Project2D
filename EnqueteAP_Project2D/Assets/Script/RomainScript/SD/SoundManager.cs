@@ -9,6 +9,8 @@ public enum SoundType
     Door,
     Footsteps,
     Writing,
+    BodySound,
+    ButtonSound,
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]

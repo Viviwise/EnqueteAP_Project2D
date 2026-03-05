@@ -21,7 +21,7 @@ namespace Script.RomainScript.Books
             
             canvasGroup.blocksRaycasts = true;
             canvasGroup.interactable = true;
-            soundUsed.OnUsed(0);
+            soundUsed.OnUsed(3);
         }
 
         public void Close()
