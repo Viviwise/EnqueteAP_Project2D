@@ -9,6 +9,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private Color originalColor;
     private Image imageRenderer;
+    
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void SetHeldItem(InventoryItem item)
     {
         heldItem = item;
+        
         heldItem.transform.SetParent(transform);
 
         if (heldItem.transform is RectTransform rectTransform)

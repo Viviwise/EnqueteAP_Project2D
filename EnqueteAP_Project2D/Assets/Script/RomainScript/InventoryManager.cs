@@ -1,4 +1,5 @@
 using Script.RomainScript.Books;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -14,9 +15,14 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     [SerializeField] private GameObject deskTop;
     
+    private Vector3 startPosition;
     GameObject draggedObject;
     GameObject lastItemSlot;
-    
+
+    void Start()
+    {
+        
+    }
     void Update()
     {
         if (draggedObject != null)
@@ -95,6 +101,7 @@ public class InventoryManager : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 if(lastItemSlotComponent == slot)
                     bookUIManager.OpenBook(inventoryItem.itemData.bookType);
             }
+            
             // Switch Items
             else
             {
