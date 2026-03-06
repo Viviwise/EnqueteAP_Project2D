@@ -12,7 +12,6 @@ namespace Script.RomainScript.Books
         [SerializeField] private Button salleExam;
         [SerializeField] private Button deskTop;
         
-
         private BookUI currentOpenBook;
 
         public bool IsBookOpen => currentOpenBook != null;

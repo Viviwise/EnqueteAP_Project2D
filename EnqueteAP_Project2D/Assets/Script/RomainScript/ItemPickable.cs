@@ -10,13 +10,13 @@ public class ItemPickable : MonoBehaviour
     public InventoryItemData itemData;
     private GameObject bookSlot;
     private BookUIManager bookUIManager;
-    
+
     [SerializeField] private Color originalColor;
-    [SerializeField] private Color Color =  Color.orange;
+    [SerializeField] private Color Color = Color.orange;
     private Image image;
-    
-    
-        //=============ADDED FOR DRAG & DROP Pick================//
+
+
+    //=============ADDED FOR DRAG & DROP Pick================//
     private Vector3 startPosition;
     private Camera cam;
     private bool isDragging;
@@ -38,11 +38,13 @@ public class ItemPickable : MonoBehaviour
     {
         if (bookUIManager != null && bookUIManager.IsBookOpen)
             return;
-        
+
         isDragging = true;
-        
-        bookSlot.transform.localScale = new Vector3(1.3f, 1.3f , 0);
+
+        bookSlot.transform.localScale = new Vector3(1.3f, 1.3f, 0);
         image.color = Color;
+
+        startPosition = transform.position;
     }
 
     private void OnMouseDrag()
@@ -61,29 +63,44 @@ public class ItemPickable : MonoBehaviour
     private void OnMouseUp()
     {
         isDragging = false;
-        
-        bookSlot.transform.localScale = new Vector3(1, 1, 0);
-        image.color = originalColor;
-        
 
-        // Vérife
+        // Vérifie les UI sous la souris
         PointerEventData pointerData = new PointerEventData(EventSystem.current);
         pointerData.position = Input.mousePosition;
 
         var results = new System.Collections.Generic.List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
 
+        bool slotFound = false;
+
         foreach (var result in results)
         {
             InventorySlot slot = result.gameObject.GetComponent<InventorySlot>();
 
-            if (slot != null && slot.heldItem == null)
+            if (slot != null)
             {
-                InventoryManager inventory = FindFirstObjectByType<InventoryManager>();
-                inventory.AddItemToSlot(this.gameObject, slot);
-                return;
+                slotFound = true;
+
+                // Slot vide → on ajoute l'objet
+                if (slot.heldItem == null)
+                {
+                    InventoryManager inventory = FindFirstObjectByType<InventoryManager>();
+                    inventory.AddItemToSlot(this.gameObject, slot);
+                    return;
+                }
+                else
+                {
+                    // Slot plein → retour position initiale
+                    transform.position = startPosition;
+                    return;
+                }
             }
         }
+
+        // Si aucun slot trouvé → retour position initiale
+        if (!slotFound)
+        {
+            transform.position = startPosition;
+        }
     }
-    
 }
