@@ -71,6 +71,11 @@ namespace Script.EliasScript
         {
             StartCoroutine(FadeOutAndLoad("BadEndScene"));
         }
+
+        public void LoadItchSite()
+        {
+            Application.OpenURL("https://kaci2000.itch.io/les-enquetes-toxiques");
+        }
         
         public void QuitScene()
         {
